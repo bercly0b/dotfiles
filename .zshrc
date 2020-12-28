@@ -1,5 +1,4 @@
 export ZSH=~/.oh-my-zsh
-export TANKER_API_TOKEN="AQAD-qJSJ7liAAAGzHvPFZ-rsUBulJvsxLYeEk4"
 export TERM=xterm-256color
 
 ZSH_THEME="robbyrussell"
