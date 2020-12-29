@@ -22,7 +22,8 @@ Plug 'preservim/nerdtree'
 Plug 'AndrewRadev/splitjoin.vim'
 
 "search by files
-Plug 'kien/ctrlp.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 "search by content
 Plug 'mileszs/ack.vim'
 
@@ -203,10 +204,7 @@ let g:indent_guides_enable_on_vim_startup = 0
 " MRU
 nnoremap <leader>p :MRU<cr>
 
-" CtrlP
-let g:ctrlp_max_height = 20
-
-" " Ale
+" Ale
 let g:js_linters = ['eslint', 'tsserver']
 let g:ts_linters = ['eslint', 'tsserver', 'tslint']
 let g:ale_linters = {
@@ -230,6 +228,8 @@ highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
 nnoremap <silent> <leader>y :ALENext<CR>
 nnoremap <silent> <leader>t :ALEPrevious<CR>
+nnoremap <silent> <leader>s :ALEFix<CR>
+"/ Ale
 
 autocmd FileType javascript,javascriptreact,typescript,javascript.jsx,typescript.tsx map <c-]> :ALEGoToDefinition<cr>
 autocmd FileType typescriptreact set ft=typescript
@@ -239,9 +239,33 @@ autocmd Filetype * if getfsize(@%) > 500000 | set ft=none | endif
 " Bufexplorer
 nnoremap <leader>o :BufExplorer<CR>
 
-" CtrlP
-let g:ctrlp_map = '<leader>f'
-let g:ctrlp_show_hidden = 1
+" fzf
+nnoremap <Leader>f :Files<CR>
+" nnoremap <leader>c :call fzf#run({'sink': 'e', 'window': 'rightbelow 20new'})<CR>
+
+let g:fzf_layout = { 'window': 'rightbelow 20new' }
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
+
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Conditional'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+" /fzf
 
 " Sleeper
 let g:sleeper_point = '<++>'

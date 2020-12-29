@@ -1,12 +1,12 @@
 # dotfiles
 
-
 ## install
 - tmux
 - zsh
 - iterm2
 - neovim
 - fzf
+- the_silver_searcher
 
 ## clone
 ```bash
