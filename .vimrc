@@ -294,15 +294,13 @@ autocmd InsertEnter * :let @/=""
 " ack
 cnoreabbrev Ack Ack!
 let g:ackhighlight = 1
-
-function! Find_git_root()
-  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
-endfunction
-
-command! -nargs=1 Ag execute "Ack! <args> " . Find_git_root()
+let g:ackprg = 'ag --vimgrep'
+let g:ack_default_options = ' -s -H --nocolor --nogroup --column --smart-case --follow'
+let g:ack_qhandler = 'botright copen 25'
 
 " search with args
 nnoremap <Leader>a :Ack! -i<Space>
+" /ack
 
 " add new line in normal mode
 nmap <S-Enter> O<Esc>j
