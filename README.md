@@ -11,7 +11,7 @@
 ## clone
 ```bash
 mkdir ~/self
-git clone link ~/self
+git clone https://github.com/bercly0b/dotfiles.git ~/self/dotfiles
 mkdir ~/self/dotfiles/.vim/plugged
 ```
 
@@ -31,3 +31,13 @@ source-file ~/self/dotfiles/.tmux.conf
 ```bash
 source ~/self/dotfiles/.zshrc
 ```
+
+~/.config/nvim/init.vim
+```bash
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath=&runtimepath
+source ~/.vimrc
+```
+
+## TODO
+- path no node in vimrc
