@@ -1,5 +1,6 @@
 export ZSH=~/.oh-my-zsh
 export TERM=xterm-256color
+export BAT_THEME="One Dark"
 
 ZSH_THEME="robbyrussell"
 
