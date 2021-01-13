@@ -226,8 +226,9 @@ let g:ale_typescript_tslint_use_global = 1
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
-nnoremap <silent> <leader>y :ALENext<CR>
-nnoremap <silent> <leader>t :ALEPrevious<CR>
+nnoremap <silent> <leader>b :ALENext<CR>
+nnoremap <silent> <leader>bp :ALEPrevious<CR>
+nnoremap <silent> <leader>t :ALEToggle<CR>
 nnoremap <silent> <leader>s :ALEFix<CR>
 "/ Ale
 
@@ -244,6 +245,7 @@ nnoremap <Leader>f :Files<CR>
 " nnoremap <leader>c :call fzf#run({'sink': 'e', 'window': 'rightbelow 20new'})<CR>
 
 let g:fzf_layout = { 'window': 'rightbelow 20new' }
+let g:fzf_preview_window = []
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 
 let g:fzf_action = {
