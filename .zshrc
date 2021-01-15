@@ -31,6 +31,8 @@ alias mmount='~/.mmount-sshfs.sh'
 alias vi='nvim'
 alias vim='nvim'
 
+alias tmux='tmux -2'
+
 ZSH_TMUX_FIXTERM=true
 
 export NVM_DIR="$HOME/.nvm"
