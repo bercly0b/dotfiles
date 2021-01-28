@@ -301,7 +301,8 @@ let g:ack_default_options = ' -s -H --nocolor --nogroup --column --smart-case --
 let g:ack_qhandler = 'botright copen 25'
 
 " search with args
-nnoremap <Leader>a :Ack! -i<Space>
+" nnoremap <Leader>a :Ack! -i<Space>
+nnoremap <Leader>a :Ag<CR>
 " /ack
 
 " add new line in normal mode
@@ -310,8 +311,8 @@ nmap <CR> o<Esc>k
 
 let g:LanguageClient_autoStart = 1
 let g:LanguageClient_serverCommands = {
-    \ 'javascript': ['~/.nvm/versions/node/v10.16.3/bin/javascript-typescript-stdio'],
-    \ 'javascriptreact': ['~/.nvm/versions/node/v10.16.3/bin/javascript-typescript-stdio']
+    \ 'javascript': ['~/.nvm/versions/node/v12.20.0/bin/node'],
+    \ 'javascriptreact': ['~/.nvm/versions/node/v12.20.0/bin/node']
     \ }
 
 nnoremap <leader>l :call LanguageClient_contextMenu()<CR>
@@ -362,7 +363,7 @@ endfunction
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-let g:coc_node_path = '/usr/local/opt/node/bin/node'
+let g:coc_node_path = '~/.nvm/versions/node/v12.20.0/bin/node'
 
 " remove extra spaces on save file
 autocmd BufWritePre * :%s/\s\+$//e
