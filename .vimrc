@@ -302,6 +302,7 @@ let g:ack_qhandler = 'botright copen 25'
 
 " search with args
 " nnoremap <Leader>a :Ack! -i<Space>
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
 nnoremap <Leader>a :Ag<CR>
 " /ack
 
