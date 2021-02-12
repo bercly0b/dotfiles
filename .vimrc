@@ -29,7 +29,8 @@ Plug 'mileszs/ack.vim'
 
 " theme
 Plug 'joshdick/onedark.vim'
-" Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
+Plug 'dracula/vim'
 
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
@@ -87,7 +88,7 @@ if !has('gui_running')
 endif
 
 let g:lightline = {
-    \ 'colorscheme': 'onedark',
+    \ 'colorscheme': 'gruvbox',
     \ 'active': {
     \     'left': [ [ 'mode', 'paste' ],
     \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -111,15 +112,16 @@ fu s:disable_lightline_on_nerdtree() abort
 endfu
 
 " Theme
-colorscheme onedark
+" colorscheme onedark
 "
 set background=dark
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-" let g:gruvbox_contrast_light='soft'
-" let g:gruvbox_bold=1
-" let g:gruvbox_italic=1
-" let g:gruvbox_invert_selection=0
-" colorscheme gruvbox
+let g:gruvbox_contrast_light='soft'
+let g:gruvbox_bold=1
+let g:gruvbox_italic=1
+let g:gruvbox_invert_selection=0
+colorscheme gruvbox
+" colorscheme dracula
 
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
