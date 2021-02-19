@@ -12,6 +12,9 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+bindkey '^[b' backward-word
+bindkey '^[f' forward-word
+
 alias gs='git status '
 alias ga='git add '
 alias gb='git branch --sort=-committerdate '
@@ -44,12 +47,3 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --no-mouse --exact'
 export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always {} | head -200'"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Predictable SSH authentication socket location.
-SOCK="/tmp/ssh-agent-$USER-screen"
-if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $SOCK ]
-then
-    rm -f /tmp/ssh-agent-$USER-screen
-    ln -sf $SSH_AUTH_SOCK $SOCK
-    export SSH_AUTH_SOCK=$SOCK
-fi
