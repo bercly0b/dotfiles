@@ -27,6 +27,9 @@ Plug 'junegunn/fzf.vim'
 "search by content
 Plug 'mileszs/ack.vim'
 
+Plug 'preservim/tagbar'
+Plug 'wellle/targets.vim'
+
 " theme
 Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
@@ -294,6 +297,12 @@ nnoremap gdl :diffget //3<CR>
 
 " clear search on enter insert mode
 autocmd InsertEnter * :let @/=""
+
+" tagbar
+nnoremap <Leader>t :TagbarToggle<CR>
+let g:tagbar_left = 1
+let g:tagbar_autoclose = 1
+" /tagbar
 
 " ack
 cnoreabbrev Ack Ack!
