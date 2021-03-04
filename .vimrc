@@ -21,6 +21,8 @@ Plug 'preservim/nerdtree'
 
 Plug 'AndrewRadev/splitjoin.vim'
 
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
 "search by files
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -384,3 +386,8 @@ com! JSONprettify %!python -m json.tool
 
 " for postcss highlight
 au BufNewFile,BufRead *.pcss setfiletype css
+
+" incsearch-fuzzy.vim
+map z/ <Plug>(incsearch-fuzzy-/)
+map z? <Plug>(incsearch-fuzzy-?)
+map zg/ <Plug>(incsearch-fuzzy-stay)
