@@ -62,6 +62,8 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'jparise/vim-graphql'
 Plug 'vim-python/python-syntax'
+Plug 'flowtype/vim-flow'
+Plug 'wavded/vim-stylus'
 
 call plug#end()
 
@@ -211,7 +213,8 @@ let g:indent_guides_enable_on_vim_startup = 0
 nnoremap <leader>p :MRU<cr>
 
 " Ale
-let g:js_linters = ['eslint', 'tsserver']
+" let g:js_linters = ['eslint', 'tsserver']
+let g:js_linters = ['flow-language-server']
 let g:ts_linters = ['eslint', 'tsserver', 'tslint']
 let g:ale_linters = {
     \ "javascript": js_linters,
@@ -318,8 +321,8 @@ nmap <CR> o<Esc>k
 
 let g:LanguageClient_autoStart = 1
 let g:LanguageClient_serverCommands = {
-    \ 'javascript': ['~/.nvm/versions/node/v12.20.0/bin/node'],
-    \ 'javascriptreact': ['~/.nvm/versions/node/v12.20.0/bin/node']
+    \ 'javascript': ['/home/vladpotapov/.nvm/versions/node/v12.21.0/bin/node'],
+    \ 'javascriptreact': ['/home/vladpotapov/.nvm/versions/node/v12.21.0/bin/node']
     \ }
 
 nnoremap <leader>l :call LanguageClient_contextMenu()<CR>
@@ -370,7 +373,7 @@ endfunction
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-let g:coc_node_path = '~/.nvm/versions/node/v12.20.0/bin/node'
+let g:coc_node_path = '/home/vladpotapov/.nvm/versions/node/v12.21.0/bin/node'
 
 " remove extra spaces on save file
 autocmd BufWritePre * :%s/\s\+$//e
