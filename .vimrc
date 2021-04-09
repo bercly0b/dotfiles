@@ -97,10 +97,11 @@ let g:lightline = {
     \ 'colorscheme': 'gruvbox',
     \ 'active': {
     \     'left': [ [ 'mode', 'paste' ],
-    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+    \             [ 'gitbranch', 'readonly', 'filename', 'modified', 'linterstatus' ] ]
     \ },
     \ 'component_function': {
-    \   'gitbranch': 'FugitiveHead'
+    \   'gitbranch': 'FugitiveHead',
+    \   'linterstatus': 'LinterStatus'
     \ },
     \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
     \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
@@ -214,7 +215,7 @@ nnoremap <leader>p :MRU<cr>
 
 " Ale
 " let g:js_linters = ['eslint', 'tsserver']
-let g:js_linters = ['flow-language-server']
+let g:js_linters = ['flow-language-server', 'eslint']
 let g:ts_linters = ['eslint', 'tsserver', 'tslint']
 let g:ale_linters = {
     \ "javascript": js_linters,
@@ -230,15 +231,29 @@ let g:ale_fixers = {
 let g:ale_lint_on_insert_leave = 1
 let g:ale_lint_on_text_changed = "never"
 
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '.'
+
 let g:ale_typescript_tslint_use_global = 1
 
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
-nnoremap <silent> <leader>b :ALENext<CR>
-nnoremap <silent> <leader>bp :ALEPrevious<CR>
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 nnoremap <silent> <leader>t :ALEToggle<CR>
 nnoremap <silent> <leader>s :ALEFix<CR>
+
+function! LinterStatus() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+    return l:counts.total == 0 ? 'ok' : printf(
+        \   '%dW %dE ',
+        \   all_non_errors,
+        \   all_errors
+        \)
+endfunction
 "/ Ale
 
 autocmd FileType javascript,javascriptreact,typescript,javascript.jsx,typescript.tsx map <c-]> :ALEGoToDefinition<cr>
@@ -394,3 +409,5 @@ au BufNewFile,BufRead *.pcss setfiletype css
 map z/ <Plug>(incsearch-fuzzy-/)
 map z? <Plug>(incsearch-fuzzy-?)
 map zg/ <Plug>(incsearch-fuzzy-stay)
+
+let g:javascript_plugin_flow = 1

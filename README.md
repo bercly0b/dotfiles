@@ -41,3 +41,4 @@ source ~/.vimrc
 
 ## TODO
 - path no node in vimrc
+- install script
