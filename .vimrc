@@ -17,7 +17,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " navigation
 Plug 'jlanzarotta/bufexplorer'
 Plug 'yegappan/mru'
-Plug 'preservim/nerdtree'
+Plug 'lambdalisue/fern.vim'
 
 Plug 'AndrewRadev/splitjoin.vim'
 
@@ -107,17 +107,6 @@ let g:lightline = {
     \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
     \ }
 
-augroup filetype_nerdtree
-    au!
-    au FileType nerdtree call s:disable_lightline_on_nerdtree()
-    au WinEnter,BufWinEnter,TabEnter * call s:disable_lightline_on_nerdtree()
-augroup END
-
-fu s:disable_lightline_on_nerdtree() abort
-    let nerdtree_winnr = index(map(range(1, winnr('$')), {_,v -> getbufvar(winbufnr(v), '&ft')}), 'nerdtree') + 1
-    call timer_start(0, {-> nerdtree_winnr && setwinvar(nerdtree_winnr, '&stl', '%#Normal#')})
-endfu
-
 " Theme
 " colorscheme onedark
 "
@@ -200,12 +189,51 @@ let g:python_highlight_all = 1
 """"PLUGINS""""
 """"""""""""""""
 
-" NerdTree
-nnoremap <leader><leader> :NERDTreeToggle<cr>
-nnoremap <leader>nb :NERDTreeFromBookmark<Space>
-nnoremap <leader>/ :NERDTreeFind<cr>
-let g:NERDTreeWinPos = "left"
-let NERDTreeStatusline='%{exists("b:NERDTree")?fnamemodify(b:NERDTree.root.path.str(), ":~"):""}'
+" Fern
+nnoremap <leader><leader> :Fern . -drawer -width=50 -toggle<cr>
+nnoremap <leader>/ :Fern . -drawer -reveal=% -width=50<cr>
+let g:fern#disable_default_mappings   = 1
+let g:fern#disable_drawer_auto_quit   = 1
+let g:fern#disable_viewer_hide_cursor = 1
+
+let g:fern#renderer#default#collapsed_symbol = '▷ '
+let g:fern#renderer#default#expanded_symbol  = '▼ '
+let g:fern#renderer#default#leading          = '  '
+let g:fern#renderer#default#leaf_symbol      = ' '
+let g:fern#renderer#default#root_symbol      = '~ '
+let g:fern#hide_cursor = 1
+
+function! FernInit() abort
+  nmap <buffer><expr>
+        \ <Plug>(fern-my-open-expand-collapse)
+        \ fern#smart#leaf(
+        \   "\<Plug>(fern-action-open:select)",
+        \   "\<Plug>(fern-action-expand)",
+        \   "\<Plug>(fern-action-collapse)",
+        \ )
+  nmap <buffer> <CR> <Plug>(fern-my-open-expand-collapse)
+  nmap <buffer> x <Plug>(fern-action-collapse)
+  nmap <buffer> N <Plug>(fern-action-new-file)
+  nmap <buffer> K <Plug>(fern-action-new-dir)
+  nmap <buffer> D <Plug>(fern-action-remove)
+  nmap <buffer> m <Plug>(fern-action-move)
+  nmap <buffer> c <Plug>(fern-action-copy)
+  nmap <buffer> s <Plug>(fern-action-open:split)
+  nmap <buffer> v <Plug>(fern-action-open:vsplit)
+  nmap <buffer> <nowait> I <Plug>(fern-action-hidden:toggle)
+  nmap <buffer> R <Plug>(fern-action-reload)
+  nmap <buffer> Y <Plug>(fern-action-yank)
+  nmap <buffer> o <Plug>(fern-action-system:open)
+
+  nmap <buffer> <nowait> < <Plug>(fern-action-leave)
+  nmap <buffer> <nowait> > <Plug>(fern-action-enter)
+endfunction
+
+augroup FernEvents
+  autocmd!
+  autocmd FileType fern call FernInit()
+augroup END
+" /Fern
 
 " Indent guides
 let g:indent_guides_enable_on_vim_startup = 0
@@ -336,8 +364,8 @@ nmap <CR> o<Esc>k
 
 let g:LanguageClient_autoStart = 1
 let g:LanguageClient_serverCommands = {
-    \ 'javascript': ['/home/vladpotapov/.nvm/versions/node/v12.21.0/bin/node'],
-    \ 'javascriptreact': ['/home/vladpotapov/.nvm/versions/node/v12.21.0/bin/node']
+    \ 'javascript': ['~/.nvm/versions/node/v12.18.1/bin/node'],
+    \ 'javascriptreact': ['~/.nvm/versions/node/v12.18.1/bin/node']
     \ }
 
 nnoremap <leader>l :call LanguageClient_contextMenu()<CR>
@@ -388,7 +416,7 @@ endfunction
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-let g:coc_node_path = '/home/vladpotapov/.nvm/versions/node/v12.21.0/bin/node'
+let g:coc_node_path = '~/.nvm/versions/node/v12.18.1/bin/node'
 
 " remove extra spaces on save file
 autocmd BufWritePre * :%s/\s\+$//e
