@@ -14,6 +14,9 @@ Plug 'autozimu/LanguageClient-neovim', {
 " autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+Plug 'tyru/open-browser.vim'
+Plug 'tyru/open-browser-github.vim'
+
 " navigation
 Plug 'jlanzarotta/bufexplorer'
 Plug 'yegappan/mru'
@@ -139,11 +142,14 @@ map <leader>cd :cd %:p:h<cr>:pwd<cr>
 " Set to auto read when a file is changed from the outside
 set autoread
 " Ignore case when searching
+set smartcase
 set ignorecase
 " Don't redraw while executing macros (good performance config)
 set lazyredraw
 " Show matching brackets when text indicator is over them
 set showmatch
+
+set inccommand=nosplit
 " How many tenths of a second to blink when matching brackets
 set mat=4
 
@@ -239,7 +245,7 @@ augroup END
 let g:indent_guides_enable_on_vim_startup = 0
 
 " MRU
-nnoremap <leader>p :MRU<cr>
+nnoremap <leader>p :20MRU<cr>
 
 " Ale
 " let g:js_linters = ['eslint', 'tsserver']
@@ -285,7 +291,7 @@ endfunction
 "/ Ale
 
 autocmd FileType javascript,javascriptreact,typescript,javascript.jsx,typescript.tsx map <c-]> :ALEGoToDefinition<cr>
-autocmd FileType typescriptreact set ft=typescript
+autocmd FileType typescriptreact set ft=typescript.tsx
 
 autocmd Filetype * if getfsize(@%) > 500000 | set ft=none | endif
 
@@ -385,9 +391,6 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
-
 " if hidden is not set, TextEdit might fail.
 set hidden
 " Some servers have issues with backup files, see #649
@@ -402,14 +405,16 @@ set shortmess+=c
 " always show signcolumns
 set signcolumn=yes
 
-" Use K to show documentation in preview window
+" Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
   else
-    call CocAction('doHover')
+    execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
 
@@ -439,3 +444,12 @@ map z? <Plug>(incsearch-fuzzy-?)
 map zg/ <Plug>(incsearch-fuzzy-stay)
 
 let g:javascript_plugin_flow = 1
+
+nmap <silent> <C-g>h :OpenGithubFile<CR>
+
+" disable relative string numbers on insert mode
+augroup every
+  autocmd!
+  au InsertEnter * set norelativenumber
+  au InsertLeave * set relativenumber
+augroup END
