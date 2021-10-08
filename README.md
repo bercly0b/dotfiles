@@ -7,6 +7,7 @@
 - neovim
 - fzf
 - the_silver_searcher
+- fd-find
 
 ## clone
 ```bash
