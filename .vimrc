@@ -91,6 +91,8 @@ endif
 set guioptions-=r
 set guioptions-=L
 
+let g:node_path = '/home/vladpotapov/.nvm/versions/node/v12.20.0/bin/node'
+
 " lightline
 if !has('gui_running')
   set t_Co=256
@@ -248,12 +250,13 @@ let g:indent_guides_enable_on_vim_startup = 0
 nnoremap <leader>p :20MRU<cr>
 
 " Ale
-" let g:js_linters = ['eslint', 'tsserver']
-let g:js_linters = ['flow-language-server', 'eslint']
+let g:js_linters = ['eslint', 'tsserver']
 let g:ts_linters = ['eslint', 'tsserver', 'tslint']
+
 let g:ale_linters = {
     \ "javascript": js_linters,
     \ "typescript": ts_linters,
+    \ "json": ['jsonlint', 'spectral'],
     \ }
 let g:js_fixers = ['eslint']
 let g:ts_fixers = ['eslint', 'tslint']
@@ -370,8 +373,8 @@ nmap <CR> o<Esc>k
 
 let g:LanguageClient_autoStart = 1
 let g:LanguageClient_serverCommands = {
-    \ 'javascript': ['~/.nvm/versions/node/v12.18.1/bin/node'],
-    \ 'javascriptreact': ['~/.nvm/versions/node/v12.18.1/bin/node']
+    \ 'javascript': [node_path],
+    \ 'javascriptreact': [node_path]
     \ }
 
 nnoremap <leader>l :call LanguageClient_contextMenu()<CR>
@@ -405,23 +408,21 @@ set shortmess+=c
 " always show signcolumns
 set signcolumn=yes
 
-" Use K to show documentation in preview window.
+" Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
   else
-    execute '!' . &keywordprg . " " . expand('<cword>')
+    call CocAction('doHover')
   endif
 endfunction
 
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-let g:coc_node_path = '~/.nvm/versions/node/v12.18.1/bin/node'
+let g:coc_node_path = node_path
 
 " remove extra spaces on save file
 autocmd BufWritePre * :%s/\s\+$//e
