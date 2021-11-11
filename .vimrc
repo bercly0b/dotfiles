@@ -6,6 +6,8 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'editorconfig/editorconfig-vim'
 
+Plug 'christoomey/vim-tmux-navigator'
+
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
@@ -79,6 +81,8 @@ filetype plugin indent on
 set guicursor+=a:blinkon0
 set scrolloff=1
 set mouse=a
+" disable colorcolumn
+set cc=0
 
 set termguicolors
 if exists('+termguicolors')
@@ -127,12 +131,6 @@ colorscheme gruvbox
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 let g:vim_jsx_pretty_colorful_config = 1
-
-" Buffer movement
-nnoremap <c-l> <c-w>l
-nnoremap <c-h> <c-w>h
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
 
 " split window resize
 nnoremap <silent> <Leader>= :exe "vertical resize +10"<CR>
@@ -276,8 +274,8 @@ let g:ale_typescript_tslint_use_global = 1
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nmap <silent> <leader>k <Plug>(ale_previous_wrap)
+nmap <silent> <leader>j <Plug>(ale_next_wrap)
 nnoremap <silent> <leader>t :ALEToggle<CR>
 nnoremap <silent> <leader>s :ALEFix<CR>
 
