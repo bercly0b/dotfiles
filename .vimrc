@@ -39,7 +39,7 @@ Plug 'wellle/targets.vim'
 " theme
 Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
-Plug 'dracula/vim'
+Plug 'rakr/vim-one'
 
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
@@ -95,7 +95,7 @@ endif
 set guioptions-=r
 set guioptions-=L
 
-let g:node_path = '/home/vladpotapov/.nvm/versions/node/v12.20.0/bin/node'
+let g:node_path = '/Users/vladpotapov/.nvm/versions/node/v12.18.1/bin/node'
 
 " lightline
 if !has('gui_running')
@@ -103,7 +103,7 @@ if !has('gui_running')
 endif
 
 let g:lightline = {
-    \ 'colorscheme': 'gruvbox',
+    \ 'colorscheme': 'one',
     \ 'active': {
     \     'left': [ [ 'mode', 'paste' ],
     \             [ 'gitbranch', 'readonly', 'filename', 'modified', 'linterstatus' ] ]
@@ -119,14 +119,16 @@ let g:lightline = {
 " Theme
 " colorscheme onedark
 "
-set background=dark
+" set background=dark
+set background=light
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-let g:gruvbox_contrast_light='soft'
-let g:gruvbox_bold=1
-let g:gruvbox_italic=1
-let g:gruvbox_invert_selection=0
-colorscheme gruvbox
-" colorscheme dracula
+" let g:gruvbox_contrast_light='soft'
+" let g:gruvbox_bold=1
+" let g:gruvbox_italic=1
+" let g:gruvbox_invert_selection=0
+let g:one_allow_italics = 1
+" colorscheme gruvbox
+colorscheme one
 
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
@@ -421,6 +423,12 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 let g:coc_node_path = node_path
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " remove extra spaces on save file
 autocmd BufWritePre * :%s/\s\+$//e
