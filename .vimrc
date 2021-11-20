@@ -95,7 +95,7 @@ endif
 set guioptions-=r
 set guioptions-=L
 
-let g:node_path = '/Users/vladpotapov/.nvm/versions/node/v12.18.1/bin/node'
+let g:node_path = '/home/vladpotapov/.nvm/versions/node/v12.20.0/bin/node'
 
 " lightline
 if !has('gui_running')
@@ -118,17 +118,17 @@ let g:lightline = {
 
 " Theme
 " colorscheme onedark
-"
-" set background=dark
-set background=light
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-" let g:gruvbox_contrast_light='soft'
-" let g:gruvbox_bold=1
-" let g:gruvbox_italic=1
-" let g:gruvbox_invert_selection=0
-let g:one_allow_italics = 1
 " colorscheme gruvbox
 colorscheme one
+"
+set background=dark
+" set background=light
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+let g:gruvbox_contrast_light='soft'
+let g:gruvbox_bold=1
+let g:gruvbox_italic=1
+let g:gruvbox_invert_selection=0
+let g:one_allow_italics = 1
 
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
