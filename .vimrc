@@ -44,17 +44,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'shinchu/lightline-gruvbox.vim'
 
 " syntax highligt
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'alexlafroscia/postcss-syntax.vim' "check
-Plug 'hail2u/vim-css3-syntax'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-Plug 'jparise/vim-graphql'
-Plug 'vim-python/python-syntax'
-Plug 'flowtype/vim-flow'
 Plug 'wavded/vim-stylus'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Autocomplete
 Plug 'neovim/nvim-lspconfig'
@@ -74,4 +65,5 @@ source ~/self/dotfiles/vim/plugins/ale.vim
 source ~/self/dotfiles/vim/plugins/cmp.vim
 source ~/self/dotfiles/vim/plugins/fern.vim
 source ~/self/dotfiles/vim/plugins/fzf.vim
+source ~/self/dotfiles/vim/plugins/treesitter.vim
 source ~/self/dotfiles/vim/plugins/lightline.vim
