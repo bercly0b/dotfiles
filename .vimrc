@@ -7,14 +7,6 @@ Plug 'editorconfig/editorconfig-vim'
 
 Plug 'christoomey/vim-tmux-navigator'
 
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-
-" autocomplete
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 Plug 'tyru/open-browser.vim'
 Plug 'tyru/open-browser-github.vim'
 
@@ -64,13 +56,22 @@ Plug 'vim-python/python-syntax'
 Plug 'flowtype/vim-flow'
 Plug 'wavded/vim-stylus'
 
+" Autocomplete
+Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
+
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-cmdline'
+
 call plug#end()
 
 source ~/self/dotfiles/vim/settings.vim
 source ~/self/dotfiles/vim/keymaps.vim
 
 source ~/self/dotfiles/vim/plugins/ale.vim
-source ~/self/dotfiles/vim/plugins/coc.vim
+source ~/self/dotfiles/vim/plugins/cmp.vim
 source ~/self/dotfiles/vim/plugins/fern.vim
 source ~/self/dotfiles/vim/plugins/fzf.vim
 source ~/self/dotfiles/vim/plugins/lightline.vim
