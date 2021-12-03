@@ -40,15 +40,6 @@ nmap <silent> <leader>j <Plug>(ale_next_wrap)
 nnoremap <silent> <leader>t :ALEToggle<CR>
 nnoremap <silent> <leader>s :ALEFix<CR>
 
-" coc
-nnoremap <leader>l :call LanguageClient_contextMenu()<CR>
-nnoremap gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <leader>r :call LanguageClient#textDocument_rename()<CR>
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
 " fern
 nnoremap <leader><leader> :Fern . -drawer -width=50 -toggle<cr>
 nnoremap <leader>/ :Fern . -drawer -reveal=% -width=50<cr>
@@ -56,3 +47,9 @@ nnoremap <leader>/ :Fern . -drawer -reveal=% -width=50<cr>
 " fzf
 nnoremap <Leader>a :Ag<CR>
 nnoremap <Leader>f :Files<CR>
+
+" lsp
+nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
+nmap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
+nmap <silent> gt <cmd>lua vim.lsp.buf.type_definition()<CR>
+nmap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
