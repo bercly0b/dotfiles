@@ -23,9 +23,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'wellle/targets.vim'
 
 " theme
-Plug 'joshdick/onedark.vim'
-Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
+" Plug 'morhetz/gruvbox'
 
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
