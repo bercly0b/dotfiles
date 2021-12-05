@@ -3,7 +3,6 @@ call plug#begin('~/self/dotfiles/.vim/plugged')
 
 Plug 'dense-analysis/ale'
 Plug 'jiangmiao/auto-pairs'
-Plug 'editorconfig/editorconfig-vim'
 
 Plug 'christoomey/vim-tmux-navigator'
 
@@ -14,6 +13,7 @@ Plug 'tyru/open-browser-github.vim'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'lambdalisue/fern.vim'
 
+" gS gJ
 Plug 'AndrewRadev/splitjoin.vim'
 
 "search by files
@@ -40,8 +40,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-startify'
 
 " airline
-Plug 'itchyny/lightline.vim'
-Plug 'shinchu/lightline-gruvbox.vim'
+Plug 'nvim-lualine/lualine.nvim'
 
 " syntax highligt
 Plug 'wavded/vim-stylus'
@@ -65,5 +64,5 @@ source ~/self/dotfiles/vim/plugins/ale.vim
 source ~/self/dotfiles/vim/plugins/cmp.vim
 source ~/self/dotfiles/vim/plugins/fern.vim
 source ~/self/dotfiles/vim/plugins/fzf.vim
+source ~/self/dotfiles/vim/plugins/lualine.vim
 source ~/self/dotfiles/vim/plugins/treesitter.vim
-source ~/self/dotfiles/vim/plugins/lightline.vim
