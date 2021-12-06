@@ -23,8 +23,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'wellle/targets.vim'
 
 " theme
-Plug 'rakr/vim-one'
-" Plug 'morhetz/gruvbox'
+Plug 'navarasu/onedark.nvim'
 
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'

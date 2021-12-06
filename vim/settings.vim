@@ -49,16 +49,12 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-let g:node_path = '~/.nvm/versions/node/v12.18.1/bin/node'
+let g:node_path = '~/.nvm/versions/node/v12.20.0/bin/node'
 
 " Theme
-colorscheme one
+colorscheme onedark
 set background=dark
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-let g:gruvbox_contrast_light='soft'
-let g:gruvbox_bold=1
-let g:gruvbox_italic=1
-let g:gruvbox_invert_selection=0
 let g:one_allow_italics = 1
 
 let g:javascript_plugin_jsdoc = 1
