@@ -50,6 +50,8 @@ nnoremap <Leader>f :Files<CR>
 
 " lsp
 nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> L <cmd>lua vim.diagnostic.open_float()<CR>
+
 nmap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nmap <silent> gt <cmd>lua vim.lsp.buf.type_definition()<CR>
 nmap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
