@@ -9,9 +9,10 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'tyru/open-browser.vim'
 Plug 'tyru/open-browser-github.vim'
 
+Plug 'kyazdani42/nvim-web-devicons'
 " navigation
 Plug 'jlanzarotta/bufexplorer'
-Plug 'lambdalisue/fern.vim'
+Plug 'kyazdani42/nvim-tree.lua'
 
 " gS gJ
 Plug 'AndrewRadev/splitjoin.vim'
@@ -61,7 +62,7 @@ source ~/self/dotfiles/vim/keymaps.vim
 
 source ~/self/dotfiles/vim/plugins/ale.vim
 source ~/self/dotfiles/vim/plugins/cmp.vim
-source ~/self/dotfiles/vim/plugins/fern.vim
+source ~/self/dotfiles/vim/plugins/tree.vim
 source ~/self/dotfiles/vim/plugins/fzf.vim
 source ~/self/dotfiles/vim/plugins/lualine.vim
 source ~/self/dotfiles/vim/plugins/treesitter.vim

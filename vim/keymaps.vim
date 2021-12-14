@@ -40,9 +40,10 @@ nmap <silent> <leader>j <Plug>(ale_next_wrap)
 nnoremap <silent> <leader>t :ALEToggle<CR>
 nnoremap <silent> <leader>s :ALEFix<CR>
 
-" fern
-nnoremap <leader><leader> :Fern . -drawer -width=50 -toggle<cr>
-nnoremap <leader>/ :Fern . -drawer -reveal=% -width=50<cr>
+" tree
+nnoremap <leader><leader> :NvimTreeToggle<CR>
+nnoremap <leader>r :NvimTreeRefresh<CR>
+nnoremap <leader>/ :NvimTreeFindFile<CR>
 
 " fzf
 nnoremap <Leader>a :Ag<CR>
