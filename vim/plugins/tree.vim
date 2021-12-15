@@ -1,3 +1,6 @@
+" disable status line for tree
+au BufEnter,BufWinEnter,WinEnter,CmdwinEnter * if bufname('%') == "NvimTree" | set laststatus=0 | else | set laststatus=2 | endif
+
 lua <<EOF
     local nvim_tree = require('nvim-tree')
     local tree_cb = require('nvim-tree.config').nvim_tree_callback

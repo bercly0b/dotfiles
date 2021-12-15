@@ -58,6 +58,7 @@ Plug 'L3MON4D3/LuaSnip'
 call plug#end()
 
 source ~/self/dotfiles/vim/settings.vim
+source ~/self/dotfiles/vim/theme.vim
 source ~/self/dotfiles/vim/keymaps.vim
 
 source ~/self/dotfiles/vim/plugins/ale.vim

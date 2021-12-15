@@ -51,16 +51,6 @@ endif
 
 let g:node_path = '~/.nvm/versions/node/v12.20.0/bin/node'
 
-" Theme
-colorscheme onedark
-set background=dark
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-let g:one_allow_italics = 1
-
-let g:javascript_plugin_jsdoc = 1
-let g:javascript_plugin_ngdoc = 1
-let g:vim_jsx_pretty_colorful_config = 1
-
 " Indent guides
 let g:indent_guides_enable_on_vim_startup = 0
 
