@@ -1,10 +1,10 @@
 lua << END
-    require'lualine'.setup {
-        options = {theme = 'auto'},
+    require('lualine').setup {
+        options = { theme = 'auto' },
         sections = {
             lualine_b = {
                 'branch', 'diff',
-                {'diagnostics', sources={'nvim_lsp', 'ale'}}
+                { 'diagnostics', sources={ 'nvim_lsp', 'ale' } }
             },
         },
     }

@@ -1,8 +1,7 @@
 set completeopt=menu,menuone,noselect
 
 lua <<EOF
-    -- Setup nvim-cmp.
-    local cmp = require'cmp'
+    local cmp = require('cmp')
 
     local lsp_installer = require('nvim-lsp-installer')
     lsp_installer.on_server_ready(function(server)
@@ -13,7 +12,6 @@ lua <<EOF
 
     cmp.setup({
         snippet = {
-            -- REQUIRED - you must specify a snippet engine
             expand = function(args)
                require('luasnip').lsp_expand(args.body)
             end,
@@ -52,15 +50,23 @@ lua <<EOF
         })
     })
 
-    require'cmp'.setup.cmdline('/', {
+    require('cmp').setup.cmdline('/', {
         sources = {
-            { name = 'buffer', max_item_count = 8 }
+            {
+                name = 'buffer',
+                max_item_count = 8,
+                keyword_length = 5,
+            }
         }
     })
 
-    require'cmp'.setup.cmdline(':', {
+    require('cmp').setup.cmdline(':', {
         sources = {
-            { name = 'cmdline', max_item_count = 8 }
+            {
+                name = 'cmdline',
+                max_item_count = 8,
+                keyword_length = 3,
+            }
         }
     })
 
