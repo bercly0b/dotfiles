@@ -1,5 +1,4 @@
-" disable status line for tree
-au BufEnter,BufWinEnter,WinEnter,CmdwinEnter * if bufname('%') == "NvimTree" | set laststatus=0 | else | set laststatus=2 | endif
+let g:nvim_tree_special_files = { 'Makefile': 1, 'MAKEFILE': 1 }
 
 lua <<EOF
     local nvim_tree = require('nvim-tree')
@@ -25,7 +24,7 @@ lua <<EOF
                     { key = 'o', cb = tree_cb('system_open') },
                     { key = 'c', cb = tree_cb('copy') },
                     { key = 'p', cb = tree_cb('paste') },
-                    { key = 'r', cb = tree_cb('rename') },
+                    { key = 'm', cb = tree_cb('rename') },
                 }
             }
         }
