@@ -8,6 +8,8 @@
 - fzf
 - the_silver_searcher
 - fd-find
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
+https://github.com/sharkdp/fd
 
 ## clone
 ```bash
