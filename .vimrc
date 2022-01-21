@@ -61,13 +61,16 @@ Plug 'L3MON4D3/LuaSnip'
 
 call plug#end()
 
-source ~/self/dotfiles/vim/settings.vim
-source ~/self/dotfiles/vim/theme.vim
-source ~/self/dotfiles/vim/keymaps.vim
+lua <<EOF
+    require('settings')
+    require('theme')
+    require('keymaps')
 
-source ~/self/dotfiles/vim/plugins/ale.vim
-source ~/self/dotfiles/vim/plugins/cmp.vim
-source ~/self/dotfiles/vim/plugins/tree.vim
-source ~/self/dotfiles/vim/plugins/fzf.vim
-source ~/self/dotfiles/vim/plugins/lualine.vim
-source ~/self/dotfiles/vim/plugins/treesitter.vim
+    require('plugins/ale')
+    require('plugins/cmp')
+    require('plugins/tree')
+    require('plugins/fzf')
+    require('plugins/lualine')
+    require('plugins/treesitter')
+EOF
+
