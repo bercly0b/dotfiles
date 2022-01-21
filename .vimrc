@@ -9,6 +9,9 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'tyru/open-browser.vim'
 Plug 'tyru/open-browser-github.vim'
 
+" g/
+Plug 'google/vim-searchindex'
+
 Plug 'kyazdani42/nvim-web-devicons'
 " navigation
 Plug 'jlanzarotta/bufexplorer'
