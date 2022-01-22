@@ -55,5 +55,7 @@ map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', { silent = true })
 map('n', 'gt', 'vim.lsp.buf.type_definition()<CR>', { silent = true })
 map('n', 'gi', 'vim.lsp.buf.implementation()<CR>', { silent = true })
 
+map('n', '<c-s>o', ':so ~/.config/nvim/init.vim<CR>', { silent = false, noremap = true })
+
 -- json prettify
 vim.cmd('command! JSONprettify %!python -m json.tool')
