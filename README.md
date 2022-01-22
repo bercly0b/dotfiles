@@ -23,10 +23,8 @@ set runtimepath^=~/.vim
 set runtimepath+=~/self/dotfiles/.vim
 set runtimepath+=~/self/dotfiles
 set runtimepath+=~/.vim/after
-
 let &packpath=&runtimepath
-
-source ~/self/dotfiles/.vimrc
+lua require('init')
 ```
 
 ~/.tmux.conf
