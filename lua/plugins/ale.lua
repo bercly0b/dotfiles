@@ -18,6 +18,8 @@ vim.g.ale_sign_warning = '.'
 
 vim.g.ale_typescript_tslint_use_global = 1
 
+vim.g.ale_hover_cursor = 0
+
 vim.cmd('highlight ALEErrorSign ctermbg=NONE ctermfg=red')
 vim.cmd('highlight ALEWarningSign ctermbg=NONE ctermfg=yellow')
 
