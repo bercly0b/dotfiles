@@ -17,10 +17,14 @@ mkdir ~/self/dotfiles/.vim/plugged
 ```
 
 ## configure
-~/.vimrc
+~/.config/nvim/init.vim
 ```bash
+set runtimepath^=~/.vim
 set runtimepath+=~/self/dotfiles/.vim
-source ~/self/dotfiles/.vimrc
+set runtimepath+=~/self/dotfiles
+set runtimepath+=~/.vim/after
+let &packpath=&runtimepath
+lua require('init')
 ```
 
 ~/.tmux.conf
@@ -33,13 +37,5 @@ source-file ~/self/dotfiles/.tmux.conf
 source ~/self/dotfiles/.zshrc
 ```
 
-~/.config/nvim/init.vim
-```bash
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
-let &packpath=&runtimepath
-source ~/.vimrc
-```
-
 ## TODO
-- path no node in vimrc
 - install script
