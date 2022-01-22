@@ -3,11 +3,11 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/self/dotfiles/.vim/plugged')
 
 Plug('dense-analysis/ale')
-Plug('jiangmiao/auto-pairs')
+Plug('windwp/nvim-autopairs')
 
 Plug('christoomey/vim-tmux-navigator')
 
-Plug('tyr(u/open-browser.vim')
+Plug('tyru/open-browser.vim')
 Plug('tyru/open-browser-github.vim')
 
 -- g/
@@ -53,7 +53,7 @@ Plug('arkav/lualine-lsp-progress')
 
 -- syntax highligt
 Plug('wavded/vim-stylus')
-Plug('nvim-treesitter/nvim-treesitter', {['do'] = 'TSUpdate'})
+Plug('nvim-treesitter/nvim-treesitter', { ['do'] = 'TSUpdate'} )
 
 -- Autocomplete
 Plug('neovim/nvim-lspconfig')

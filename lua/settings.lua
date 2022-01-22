@@ -61,3 +61,5 @@ vim.cmd([[
 ]])
 
 vim.cmd('autocmd Filetype * if getfsize(@%) > 500000 | set ft=none | endif')
+
+require('nvim-autopairs').setup({})
