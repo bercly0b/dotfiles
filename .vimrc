@@ -68,9 +68,9 @@ lua <<EOF
 
     require('plugins/ale')
     require('plugins/cmp')
+    require('plugins/lsp')
     require('plugins/tree')
     require('plugins/fzf')
     require('plugins/lualine')
     require('plugins/treesitter')
 EOF
-
