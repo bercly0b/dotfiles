@@ -31,6 +31,11 @@ Plug('junegunn/fzf', {
 
 Plug('junegunn/fzf.vim')
 
+Plug('nvim-lua/popup.nvim')
+Plug('nvim-lua/plenary.nvim')
+Plug('nvim-telescope/telescope.nvim')
+Plug('nvim-telescope/telescope-fzf-native.nvim', { ['do'] = 'make' })
+
 Plug('wellle/targets.vim')
 
 -- theme
@@ -82,6 +87,7 @@ require('plugins/cmp')
 require('plugins/luasnip')
 require('plugins/lsp')
 require('plugins/tree')
-require('plugins/fzf')
+-- require('plugins/fzf')
+require('plugins/telescope')
 require('plugins/lualine')
 require('plugins/treesitter')

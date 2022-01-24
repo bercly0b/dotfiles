@@ -44,8 +44,12 @@ map('n', '<leader>r', ':NvimTreeRefresh<CR>', default_opts)
 map('n', '<leader>/', ':NvimTreeFindFile<CR>', default_opts)
 
 -- fzf
-map('n', '<Leader>a', ':Ag<CR>', default_opts)
-map('n', '<Leader>f', ':Files<CR>', default_opts)
+-- map('n', '<Leader>a', ':Ag<CR>', default_opts)
+-- map('n', '<Leader>f', ':Files<CR>', default_opts)
+-- telescope
+map('n', '<Leader>f', ':Telescope find_files<CR>', default_opts)
+map('n', '<Leader>a', ':Telescope live_grep<CR>', default_opts)
+map('n', '<Leader>w', ':Telescope grep_string<CR>', default_opts)
 
 -- lsp
 map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', default_opts)
