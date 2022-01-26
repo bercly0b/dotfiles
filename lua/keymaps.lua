@@ -51,11 +51,12 @@ map('n', '<Leader>f', ':Files<CR>', default_opts)
 map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', default_opts)
 map('n', 'L', '<cmd>lua vim.diagnostic.open_float()<CR>', default_opts)
 
-map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', { silent = true })
-map('n', 'gt', 'vim.lsp.buf.type_definition()<CR>', { silent = true })
-map('n', 'gi', 'vim.lsp.buf.implementation()<CR>', { silent = true })
+map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', default_opts)
+map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', default_opts)
+map('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', default_opts)
+map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', default_opts)
 
-map('n', '<c-s>o', ':so ~/.config/nvim/init.vim<CR>', { silent = false, noremap = true })
+map('n', '<c-s>o', '<cmd>so ~/.config/nvim/init.vim<CR>', { silent = false, noremap = true })
 
 -- json prettify
 vim.cmd('command! JSONprettify %!python -m json.tool')

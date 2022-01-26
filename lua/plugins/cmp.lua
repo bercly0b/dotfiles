@@ -41,7 +41,7 @@ cmp.setup({
     })
 })
 
-require('cmp').setup.cmdline('/', {
+cmp.setup.cmdline('/', {
     sources = {
         {
             name = 'buffer',
@@ -51,7 +51,7 @@ require('cmp').setup.cmdline('/', {
     }
 })
 
-require('cmp').setup.cmdline(':', {
+cmp.setup.cmdline(':', {
     sources = {
         {
             name = 'cmdline',

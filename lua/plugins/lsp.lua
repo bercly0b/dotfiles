@@ -13,15 +13,15 @@ lsp_config.tsserver.setup({
     capabilities = capabilities,
 })
 
-lsp_config.sumneko_lua.setup({
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
-    }
-})
+-- lsp_config.sumneko_lua.setup({
+--     settings = {
+--         Lua = {
+--             diagnostics = {
+--                 globals = { 'vim' }
+--             }
+--         }
+--     }
+-- })
 
 vim.diagnostic.config({
     virtual_text = false,

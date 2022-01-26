@@ -53,7 +53,7 @@ Plug('arkav/lualine-lsp-progress')
 
 -- syntax highligt
 Plug('wavded/vim-stylus')
-Plug('nvim-treesitter/nvim-treesitter', { ['do'] = 'TSUpdate'} )
+Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate'} )
 
 -- Autocomplete
 Plug('neovim/nvim-lspconfig')
