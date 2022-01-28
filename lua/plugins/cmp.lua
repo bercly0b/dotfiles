@@ -23,12 +23,8 @@ cmp.setup({
     },
 
     sources = cmp.config.sources({
-        {
-            name = 'nvim_lsp',
-        },
-        {
-            name = 'luasnip',
-        },
+        { name = 'nvim_lsp' },
+        { name = 'luasnip' },
         {
             name = 'buffer',
             get_bufnrs = function()
@@ -60,3 +56,12 @@ cmp.setup.cmdline(':', {
         }
     }
 })
+
+local luasnip = require('luasnip')
+luasnip.snippets = {}
+
+-- require('luasnip.loaders.from_vscode').load()
+-- require'luasnip'.filetype_extend("typescript.tsx", {"javascript"})
+
+luasnip.filetype_extend('all', { '_' })
+require('luasnip.loaders.from_snipmate').load({ include = { 'typescript', 'javascript' } })
