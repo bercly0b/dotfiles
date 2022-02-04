@@ -67,7 +67,7 @@ Plug('L3MON4D3/LuaSnip')
 
 Plug('saadparwaiz1/cmp_luasnip')
 -- Plug('rafamadriz/friendly-snippets')
-Plug('honza/vim-snippets')
+-- Plug('honza/vim-snippets')
 
 vim.call('plug#end')
 
@@ -77,7 +77,7 @@ require('keymaps')
 
 require('plugins/ale')
 require('plugins/cmp')
--- require('plugins/luasnip')
+require('plugins/luasnip')
 require('plugins/lsp')
 require('plugins/tree')
 require('plugins/fzf')

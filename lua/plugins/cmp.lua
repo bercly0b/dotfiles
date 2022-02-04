@@ -57,11 +57,11 @@ cmp.setup.cmdline(':', {
     }
 })
 
-local luasnip = require('luasnip')
-luasnip.snippets = {}
+-- local luasnip = require('luasnip')
+-- luasnip.snippets = {}
 
 -- require('luasnip.loaders.from_vscode').load()
 -- require'luasnip'.filetype_extend("typescript.tsx", {"javascript"})
 
-luasnip.filetype_extend('all', { '_' })
-require('luasnip.loaders.from_snipmate').load({ include = { 'typescript', 'javascript' } })
+-- luasnip.filetype_extend('all', { '_' })
+-- require('luasnip.loaders.from_snipmate').load({ include = { 'typescript', 'javascript' } })

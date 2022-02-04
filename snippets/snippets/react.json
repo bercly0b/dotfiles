@@ -1,0 +1,61 @@
+{
+  "reactFunctionComponent": {
+    "prefix": "rfc",
+    "body": "import React from 'react'\n\nexport const ${TM_FILENAME_BASE} = (props : {}) => {\n\treturn (\n\t\t<div>\n\t\t\t$0\n\t\t</div>\n\t)\n}",
+    "description": "Creates a React functional component without PropTypes"
+  },
+  "jsx element": {
+    "prefix": "tag",
+    "body": "<${1:elementName}>\n\t$0\n</${1}>",
+    "description": "an element"
+  },
+  "jsx element self closed": {
+    "prefix": "tags",
+    "body": "<${1:elementName} />",
+    "description": "an element self closed"
+  },
+  "jsx elements map": {
+    "prefix": "tagm",
+    "body": "{${1:array}.map((item) => <${2:elementName} key={item.id}>\n\t$0\n</${2}>)}",
+    "description": "an element self closed"
+  },
+  "useState": {
+    "prefix": "uses",
+    "body": "const [${1:val}, set${2:setterName}] = useState(${3:defVal})",
+    "description": "use state hook"
+  },
+  "useEffect": {
+    "prefix": "usee",
+    "body": ["useEffect(() => {", "\t$1", "}, [${3:dependencies}])$0"],
+    "description": "React useEffect() hook"
+  },
+  "useContext": {
+    "prefix": "useco",
+    "body": ["const $1 = useContext($2)$0"],
+    "description": "React useContext() hook"
+  },
+  "useRef": {
+    "prefix": "user",
+    "body": ["const ${1:elName}El = useRef(null)$0"],
+    "description": "React useContext() hook"
+  },
+  "useCallback": {
+    "prefix": "usec",
+    "body": [
+      "const ${1:memoizedCallback} = useCallback(",
+      "\t() => {",
+      "\t\t${2:doSomething}(${3:a}, ${4:b})",
+      "\t},",
+      "\t[${5:a}, ${6:b}],",
+      ")$0"
+    ],
+    "description": "React useCallback() hook"
+  },
+  "useMemo": {
+    "prefix": "usem",
+    "body": [
+      "const ${1:memoizedValue} = useMemo(() => ${2:computeExpensiveValue}(${3:a}, ${4:b}), [${5:a}, ${6:b}])$0"
+    ],
+    "description": "React useMemo() hook"
+  }
+}
