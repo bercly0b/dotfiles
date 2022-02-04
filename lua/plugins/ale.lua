@@ -23,5 +23,5 @@ vim.g.ale_hover_cursor = 0
 vim.cmd('highlight ALEErrorSign ctermbg=NONE ctermfg=red')
 vim.cmd('highlight ALEWarningSign ctermbg=NONE ctermfg=yellow')
 
-vim.cmd('autocmd FileType javascript,javascriptreact,typescript,javascript.jsx,typescript.tsx map <c-]> :ALEGoToDefinition<cr>')
-vim.cmd('autocmd FileType typescriptreact set ft=typescript.tsx')
+vim.cmd('autocmd FileType javascript,javascriptreact,typescript,typescriptreact,javascript.jsx,typescript.tsx map <c-]> :ALEGoToDefinition<cr>')
+-- vim.cmd('autocmd FileType typescriptreact set ft=typescript.tsx')

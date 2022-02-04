@@ -21,6 +21,7 @@ mkdir ~/self/dotfiles/.vim/plugged
 ```bash
 set runtimepath^=~/.vim
 set runtimepath+=~/self/dotfiles/.vim
+set runtimepath+=~/self/dotfiles/snippets
 set runtimepath+=~/self/dotfiles
 set runtimepath+=~/.vim/after
 let &packpath=&runtimepath

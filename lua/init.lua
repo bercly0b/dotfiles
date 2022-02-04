@@ -63,7 +63,9 @@ Plug('hrsh7th/nvim-cmp')
 Plug('hrsh7th/cmp-nvim-lsp')
 Plug('hrsh7th/cmp-buffer')
 Plug('hrsh7th/cmp-cmdline')
+
 Plug('L3MON4D3/LuaSnip')
+Plug('saadparwaiz1/cmp_luasnip')
 
 vim.call('plug#end')
 
@@ -73,6 +75,7 @@ require('keymaps')
 
 require('plugins/ale')
 require('plugins/cmp')
+require('plugins/luasnip')
 require('plugins/lsp')
 require('plugins/tree')
 require('plugins/fzf')
