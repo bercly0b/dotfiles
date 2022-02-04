@@ -53,9 +53,5 @@ vim.api.nvim_set_keymap("s", "<C-E>", "<Plug>luasnip-next-choice", {})
 
 luasnip.snippets = {}
 
--- vim.o.runtimepath = vim.o.runtimepath..'~/self/dotfiles/snippets'
 require("luasnip.loaders.from_vscode").load({ paths = { './snippets' } })
--- require("luasnip.loaders.from_vscode").lazy_load()
--- require('luasnip.loaders.from_vscode').load()
--- luasnip.filetype_extend('all', { '_' })
--- require('luasnip.loaders.from_snipmate').load()
+require("luasnip.loaders.from_vscode").lazy_load()

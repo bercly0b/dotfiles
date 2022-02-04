@@ -1,0 +1,96 @@
+{
+    "anonymous function": {
+        "body": "function (${1:arguments}) {${0}}",
+        "prefix": "fun"
+    },
+    "arrow function with body": {
+        "body": "(${1:arguments}) => {\n\t${0}\n}",
+        "prefix": "arrow"
+    },
+    "arrow function with return": {
+        "body": "(${1:arguments}) => {\n\treturn ${0}\n}",
+        "prefix": "arrowr"
+    },
+    "console.log": {
+        "body": "console.log(${0})",
+        "prefix": "col"
+    },
+    "console.log a variable": {
+        "body": "console.log('${0}:', ${0})",
+        "prefix": "coln"
+    },
+    "const module = require('module')": {
+        "body": "const ${1:module} = require('${1:module}')",
+        "prefix": "req"
+    },
+    "const statement from destructuring": {
+        "body": "const { ${2:prop} } = ${1:value}",
+        "prefix": "cd"
+    },
+    "describe": {
+        "body": "describe('${1:description}', () => {\n\t${0}\n})",
+        "prefix": "desc"
+    },
+    "filter": {
+        "body": "${1:iterable}.filter((${2:item}) => {\n\t${0}\n})",
+        "prefix": "filter"
+    },
+    "find": {
+        "body": "${1:iterable}.find((${2:item}) => {\n\t${0}\n})",
+        "prefix": "find"
+    },
+    "immediately-invoked function expression": {
+        "body": ";(function (${1:arguments}) {\n\t${0}\n})(${2})",
+        "prefix": "iife"
+    },
+    "import module": {
+        "body": "import ${2:*} from '${1:module}'",
+        "prefix": "imp"
+    },
+    "import module destructured": {
+        "body": "import {$2} from '${1:module}'",
+        "prefix": "impd"
+    },
+    "it asynchronous": {
+        "body": "it('${1:description}', async () => {\n\t${0}\n})",
+        "prefix": "it"
+    },
+    "map": {
+        "body": "${1:iterable}.map((${2:item}) => {\n\t${0}\n})",
+        "prefix": "map"
+    },
+    "named function": {
+        "body": "function ${1:name} (${2:arguments}) {\n\t${0}\n}",
+        "prefix": "funn"
+    },
+    "querySelector": {
+        "body": "${1:document}.querySelector('${2:selector}')",
+        "prefix": "qs"
+    },
+    "querySelectorAll": {
+        "body": "Array.from(${1:document}.querySelectorAll('${2:selector}'))",
+        "prefix": "qsa"
+    },
+    "reduce": {
+        "body": "${1:iterable}.reduce((${2:previous}, ${3:current}) => {\n\t${0}\n}${4:, initial})",
+        "prefix": "reduce"
+    },
+    "try/catch": {
+        "body": "try {\n\t${0}\n} catch (${1:err}) {\n\t\n}",
+        "prefix": "try"
+    },
+	"Switch Statement": {
+		"prefix": "switch",
+		"body": [
+			"switch (${1:key}) {",
+			"\tcase ${2:value}:",
+			"\t\t$0",
+			"\t\tbreak;",
+			"",
+			"\tdefault:",
+			"\t\tbreak;",
+			"}"
+		],
+		"description": "Switch Statement"
+	}
+}

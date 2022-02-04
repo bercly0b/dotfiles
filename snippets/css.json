@@ -1,0 +1,94 @@
+{
+    "@media": {
+        "body": "@media screen and (${1:max-width: 300px}) {\n  $0\n}",
+        "prefix": "med"
+    },
+    "align-items": {
+        "body": "align-items: ${1|flex-start,flex-end,center,baseline,stretch,start,end,self-start,self-end|};",
+        "description": "initial value: stretch",
+        "prefix": "ai"
+    },
+    "align-items: center": {
+        "body": "align-items: center;",
+        "prefix": "aic"
+    },
+    "background": {
+        "body": "background: ${0:#fff};",
+        "description": "background: image position/size repeat attachment box box",
+        "prefix": "bg"
+    },
+    "background-color": {
+        "body": "background-color: ${0:#fff};",
+        "prefix": "bgc"
+    },
+    "box-shadow": {
+        "body": "box-shadow: ${1:1px} ${2:1px} ${3:1px} ${4:1px} ${0:rgba(0, 0, 0, .5)};",
+        "description": "box-shadow: x-offset y-offset blur spread color",
+        "prefix": "bos"
+    },
+    "color": {
+        "body": "color: ${0:#000};",
+        "prefix": "col"
+    },
+    "display": {
+        "body": "display: ${1|none,block,inline,inline-block,flex,inline-flex,list-item,table,inline-table,table-caption,table-cell,table-row,table-row-group,table-column|};",
+        "prefix": "dis"
+    },
+    "display: block": {
+        "body": "display: block;",
+        "prefix": "disb"
+    },
+    "display: flex": {
+        "body": "display: flex;",
+        "prefix": "disf"
+    },
+    "display: inline-block": {
+        "body": "display: inline-block;",
+        "prefix": "disi"
+    },
+    "display: none": {
+        "body": "display: none;",
+        "prefix": "disn"
+    },
+    "height": {
+        "body": "height: ${0:1px};",
+        "prefix": "hei"
+    },
+    "justify-content": {
+        "body": "justify-content: ${1|flex-start,flex-end,center,space-between,space-around|};",
+        "description": "initial value: flex-start",
+        "prefix": "jc"
+    },
+    "justify-content: center": {
+        "body": "justify-content: center;",
+        "prefix": "jcc"
+    },
+    "overflow": {
+        "body": "overflow: ${1|visible,hidden,scroll,auto,clip|};",
+        "prefix": "ov"
+    },
+    "overflow: hidden": {
+        "body": "overflow: hidden;",
+        "prefix": "ovh"
+    },
+    "position": {
+        "body": "position: ${1|relative,absolute,fixed,sticky,static|};",
+        "prefix": "pos"
+    },
+    "position absolute": {
+        "body": "position: absolute;",
+        "prefix": "posa"
+    },
+    "position relative": {
+        "body": "position: relative;",
+        "prefix": "posr"
+    },
+    "white-space: nowrap": {
+        "body": "white-space: nowrap;",
+        "prefix": "nowrap"
+    },
+    "width": {
+        "body": "width: ${0:0};",
+        "prefix": "wid"
+    }
+}

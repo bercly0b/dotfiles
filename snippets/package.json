@@ -10,7 +10,7 @@
           "markdown",
           "rmd"
         ],
-        "path": "./snippets/markdown.json"
+        "path": "./markdown.json"
       },
       {
         "language": [
@@ -19,7 +19,7 @@
           "pug",
           "eruby"
         ],
-        "path": "./snippets/html.json"
+        "path": "./html.json"
       },
       {
         "language": [
@@ -29,7 +29,7 @@
           "less",
           "stylus"
         ],
-        "path": "./snippets/css.json"
+        "path": "./css.json"
       },
       {
         "language": [
@@ -40,22 +40,15 @@
           "vue",
           "svelte"
         ],
-        "path": "./snippets/javascript.json"
-      },
-      {
-        "language": [
-          "typescript",
-          "typescriptreact"
-        ],
-        "path": "./snippets/typescript.json"
+        "path": "./javascript.json"
       },
       {
         "language": [
           "javascriptreact",
           "typescriptreact"
         ],
-        "path": "./snippets/react.json"
-      },
+        "path": "./react.json"
+      }
     ]
   }
 }
