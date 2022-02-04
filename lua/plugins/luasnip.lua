@@ -5,7 +5,7 @@ if (status) then return lib end
 end
 
 local luasnip = prequire('luasnip')
-local cmp = prequire("cmp")
+local cmp = prequire('cmp')
 
 local t = function(str)
     return vim.api.nvim_replace_termcodes(str, true, true, true)
@@ -24,25 +24,25 @@ _G.tab_complete = function()
     if cmp and cmp.visible() then
         cmp.select_next_item()
     elseif luasnip and luasnip.expand_or_jumpable() then
-        return t("<Plug>luasnip-expand-or-jump")
+        return t('<Plug>luasnip-expand-or-jump')
     elseif check_back_space() then
-        return t "<Tab>"
+        return t '<Tab>'
     else
         cmp.complete()
     end
-    return ""
+    return ''
 end
 
 _G.s_tab_complete = function()
     if cmp and cmp.visible() then
         cmp.select_prev_item()
     elseif luasnip and luasnip.jumpable(-1) then
-        return t("<Plug>luasnip-jump-prev")
+        return t('<Plug>luasnip-jump-prev')
     else
-        return t "<S-Tab>"
+        return t '<S-Tab>'
     end
-    return ""
+    return ''
 end
 
-require("luasnip.loaders.from_vscode").load({ paths = { './snippets' } })
-require("luasnip.loaders.from_vscode").lazy_load()
+require('luasnip.loaders.from_vscode').load({ paths = { './snippets' } })
+require('luasnip.loaders.from_vscode').lazy_load()

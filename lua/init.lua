@@ -14,6 +14,7 @@ Plug('tyru/open-browser-github.vim')
 Plug('google/vim-searchindex')
 
 Plug('kyazdani42/nvim-web-devicons')
+
 -- navigation
 Plug('jlanzarotta/bufexplorer')
 Plug('kyazdani42/nvim-tree.lua')
@@ -55,14 +56,17 @@ Plug('arkav/lualine-lsp-progress')
 Plug('wavded/vim-stylus')
 Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate'} )
 
--- Autocomplete
+-- lsp
 Plug('neovim/nvim-lspconfig')
 Plug('williamboman/nvim-lsp-installer')
 
+-- autocomplete
 Plug('hrsh7th/nvim-cmp')
 Plug('hrsh7th/cmp-nvim-lsp')
 Plug('hrsh7th/cmp-buffer')
 Plug('hrsh7th/cmp-cmdline')
+
+Plug('onsails/lspkind-nvim') -- cmp sources icons
 
 Plug('L3MON4D3/LuaSnip')
 Plug('saadparwaiz1/cmp_luasnip')

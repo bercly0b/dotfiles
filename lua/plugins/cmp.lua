@@ -1,6 +1,7 @@
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
 local cmp = require('cmp')
+local lspkind = require('lspkind')
 
 cmp.setup({
     snippet = {
@@ -22,6 +23,18 @@ cmp.setup({
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
     },
 
+    formatting = {
+        format = lspkind.cmp_format({
+            with_text = true,
+            menu = ({
+                buffer = '[Buffer]',
+                nvim_lsp = '[LSP]',
+                luasnip = '[Snip]',
+                nvim_lua = '[Lua]',
+            })
+        }),
+    },
+
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
@@ -38,20 +51,26 @@ cmp.setup({
 })
 
 cmp.setup.cmdline('/', {
+    view = {
+        entries = { name = 'wildmenu', separator = ' | ' }
+    },
     sources = {
         {
             name = 'buffer',
-            max_item_count = 8,
-            keyword_length = 5,
+            max_item_count = 10,
+            keyword_length = 3,
         }
     }
 })
 
 cmp.setup.cmdline(':', {
+    view = {
+        entries = { name = 'wildmenu', separator = ' | ' }
+    },
     sources = {
         {
             name = 'cmdline',
-            max_item_count = 8,
+            max_item_count = 10,
             keyword_length = 3,
         }
     }
