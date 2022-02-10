@@ -20,7 +20,6 @@ mkdir ~/self/dotfiles/.vim/plugged
 ~/.config/nvim/init.vim
 ```bash
 set runtimepath^=~/.vim
-set runtimepath+=~/self/dotfiles/.vim
 set runtimepath+=~/self/dotfiles/snippets
 set runtimepath+=~/self/dotfiles
 set runtimepath+=~/.vim/after
