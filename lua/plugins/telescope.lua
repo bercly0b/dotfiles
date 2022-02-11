@@ -9,17 +9,6 @@ require('telescope').setup({
                 ['<C-k>'] = 'move_selection_previous',
             }
         },
-        file_ignore_patterns = {
-            '^node_modules/',
-            '^__reports/',
-            '^releases/',
-            '^.git/',
-            'package%-lock.json',
-            '^build/',
-            '^dist/',
-            '^ci/',
-            '%.png',
-        },
         vimgrep_arguments = {
             'rg',
             '--color=never',
@@ -29,7 +18,7 @@ require('telescope').setup({
             '--column',
             '--smart-case',
             '--trim',
-            '--ignore-file=~/self/dotfiles/.fdignore',
+            '--ignore-file', vim.fn.expand('~/self/dotfiles/.rgignore'),
         },
         layout_config = {
             horizontal = {
@@ -42,6 +31,15 @@ require('telescope').setup({
     pickers = {
         buffers = {
             theme = 'dropdown',
+        },
+        find_files = {
+            find_command = {
+                'fd',
+                '--type', 'file',
+                '--type', 'symlink',
+                '--hidden',
+                '--ignore-file', vim.fn.expand('~/self/dotfiles/.rgignore'),
+            },
         },
     },
     extensions = {
