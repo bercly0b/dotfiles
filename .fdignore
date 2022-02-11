@@ -1,5 +1,0 @@
-node_modules/
-releases
-.git
-package-lock.json
-build/
