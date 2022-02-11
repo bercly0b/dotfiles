@@ -22,14 +22,11 @@ Plug('kyazdani42/nvim-tree.lua')
 -- gS gJ
 Plug('AndrewRadev/splitjoin.vim')
 
--- search by files
-Plug('junegunn/fzf', {
-    ['do'] = function()
-        vim.fn['fzf#install']()
-    end
-})
-
-Plug('junegunn/fzf.vim')
+-- telescope
+Plug('nvim-lua/popup.nvim')
+Plug('nvim-lua/plenary.nvim')
+Plug('nvim-telescope/telescope.nvim')
+Plug('nvim-telescope/telescope-fzf-native.nvim', { ['do'] = 'make' })
 
 Plug('wellle/targets.vim')
 
@@ -82,6 +79,6 @@ require('plugins/cmp')
 require('plugins/luasnip')
 require('plugins/lsp')
 require('plugins/tree')
-require('plugins/fzf')
+require('plugins/telescope')
 require('plugins/lualine')
 require('plugins/treesitter')

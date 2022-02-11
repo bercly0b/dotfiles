@@ -1,0 +1,12 @@
+.git
+node_modules/
+__reports/
+releases
+build/
+dist/
+ci/
+build/
+
+package-lock.json
+*.png
+*.json.gz

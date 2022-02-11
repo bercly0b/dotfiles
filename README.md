@@ -1,19 +1,18 @@
 # dotfiles
 
 ## install
-- tmux
-- zsh
-- iterm2
-- neovim
-- fzf
-- the_silver_searcher
-- fd-find
+- [tmux](https://github.com/tmux/tmux)
+- [zsh](https://ohmyz.sh/)
+- [iterm2](https://iterm2.com/)
+- [neovim](https://neovim.io/)
+- [fzf](https://github.com/junegunn/fzf)
+- [fd-find](https://github.com/sharkdp/fd)
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
 
 ## clone
 ```bash
 mkdir ~/self
 git clone https://github.com/bercly0b/dotfiles.git ~/self/dotfiles
-mkdir ~/self/dotfiles/.vim/plugged
 ```
 
 ## configure
