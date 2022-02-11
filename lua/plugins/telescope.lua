@@ -13,6 +13,7 @@ require('telescope').setup({
             'rg',
             '--color=never',
             '--no-heading',
+            '--no-heading',
             '--with-filename',
             '--line-number',
             '--column',
@@ -40,6 +41,14 @@ require('telescope').setup({
                 '--hidden',
                 '--ignore-file', vim.fn.expand('~/self/dotfiles/.rgignore'),
             },
+            layout_config = {
+                horizontal = {
+                    width = 0.4,
+                    height = 0.3,
+                },
+            },
+            previewer = false,
+            prompt_title = false,
         },
     },
     extensions = {
