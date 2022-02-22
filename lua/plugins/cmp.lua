@@ -10,11 +10,22 @@ cmp.setup({
         end,
     },
 
+    completion = {
+        autocomplete = false
+    },
+
     mapping = {
         ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' }),
-        ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-        ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-        ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+
+        ['<C-j>'] = cmp.mapping(function()
+            if cmp.visible() then
+                cmp.select_next_item()
+            else
+                cmp.complete()
+            end
+        end, { 'i', 's' }),
+
+        ['<C-k>'] = cmp.mapping.select_prev_item(),
         ['<C-y>'] = cmp.config.disable,
         ['<C-e>'] = cmp.mapping({
             i = cmp.mapping.abort(),
@@ -51,6 +62,10 @@ cmp.setup({
 })
 
 cmp.setup.cmdline('/', {
+    completion = {
+        autocomplete = true
+    },
+
     view = {
         entries = { name = 'wildmenu', separator = ' | ' }
     },
@@ -64,6 +79,10 @@ cmp.setup.cmdline('/', {
 })
 
 cmp.setup.cmdline(':', {
+    completion = {
+        autocomplete = true
+    },
+
     view = {
         entries = { name = 'wildmenu', separator = ' | ' }
     },
