@@ -24,6 +24,7 @@ set.shiftwidth = 4
 set.expandtab = true
 set.smarttab = true
 set.autoindent = true
+set.scrolloff = 7
 
 set.wildignore = set.wildignore + '*/node_modules/*,/.git/*'
 

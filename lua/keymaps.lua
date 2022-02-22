@@ -57,6 +57,10 @@ map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', default_opts)
 map('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', default_opts)
 map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', default_opts)
 
+-- go to next/prev buffer
+map('n', 'gn', ':bn<CR>', default_opts)
+map('n', 'gp', ':bp<CR>', default_opts)
+
 -- luasnip
 map('i', '<Tab>', 'v:lua.tab_complete()', { expr = true })
 map('s', '<Tab>', 'v:lua.tab_complete()', { expr = true })
