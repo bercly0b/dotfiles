@@ -47,7 +47,7 @@ Plug('mhinz/vim-startify')
 
 -- status line
 Plug('nvim-lualine/lualine.nvim')
-Plug('arkav/lualine-lsp-progress')
+Plug('bercly0b/lualine-lsp-progress')
 
 -- syntax highligt
 Plug('wavded/vim-stylus')
