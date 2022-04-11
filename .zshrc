@@ -53,3 +53,5 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --no-mouse --exact'
 export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always {} | head -200'"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="/usr/local/opt/gnupg@2.2/bin:$PATH"
