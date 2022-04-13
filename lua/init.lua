@@ -75,6 +75,7 @@ require('theme')
 require('keymaps')
 
 require('plugins/ale')
+require('plugins/autopairs')
 require('plugins/cmp')
 require('plugins/luasnip')
 require('plugins/lsp')
