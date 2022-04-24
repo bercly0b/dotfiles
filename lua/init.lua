@@ -2,7 +2,6 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin', '~/self/dotfiles/.vim/plugged')
 
-Plug('dense-analysis/ale')
 Plug('windwp/nvim-autopairs')
 
 Plug('christoomey/vim-tmux-navigator')
@@ -56,6 +55,8 @@ Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate'} )
 -- lsp
 Plug('neovim/nvim-lspconfig')
 Plug('williamboman/nvim-lsp-installer')
+-- linters
+Plug('jose-elias-alvarez/null-ls.nvim')
 
 -- autocomplete
 Plug('hrsh7th/nvim-cmp')
@@ -74,11 +75,11 @@ require('settings')
 require('theme')
 require('keymaps')
 
-require('plugins/ale')
 require('plugins/autopairs')
 require('plugins/cmp')
 require('plugins/luasnip')
 require('plugins/lsp')
+require('plugins/null-ls')
 require('plugins/tree')
 require('plugins/telescope')
 require('plugins/lualine')
