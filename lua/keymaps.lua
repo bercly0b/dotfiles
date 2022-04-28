@@ -52,10 +52,12 @@ map('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', default_opts)
 map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', default_opts)
 map('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>', default_opts)
 
+vim.cmd('command! Rename lua vim.lsp.buf.rename()')
+
 -- linters
 map('n', '<c-[>', '<cmd>lua vim.diagnostic.goto_prev()<CR>', default_opts)
 map('n', '<c-]>', '<cmd>lua vim.diagnostic.goto_next()<CR>', default_opts)
-map('n', '<leader>s', '<cmd>lua vim.lsp.buf.formatting()<CR>', default_opts)
+map('n', 'gs', '<cmd>lua vim.lsp.buf.formatting()<CR>', default_opts)
 
 -- go to next/prev buffer
 map('n', 'gn', ':bn<CR>', default_opts)
