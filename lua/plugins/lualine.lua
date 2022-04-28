@@ -7,7 +7,7 @@ require('lualine').setup {
         lualine_b = {
             'branch',
             'diff',
-            { 'diagnostics', sources = { 'nvim_diagnostic', 'ale' } },
+            { 'diagnostics', sources = { 'nvim_diagnostic' } },
         },
         lualine_c = {
             { 'filename', path = 1, shorting_target = 50 },

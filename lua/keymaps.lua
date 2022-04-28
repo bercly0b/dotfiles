@@ -32,12 +32,6 @@ map('n', '<C-g>h', ':OpenGithubFile<CR>', { silent = true })
 
 map('i', 'jj', '<Esc>', { noremap = true })
 
--- ale
-map('n', '<leader>k', '<Plug>(ale_previous_wrap)', { silent = true })
-map('n', '<leader>j', '<Plug>(ale_next_wrap)', { silent = true })
-map('n', '<leader>t', ':ALEToggle<CR>', default_opts)
-map('n', '<leader>s', ':ALEFix<CR>', default_opts)
-
 -- tree
 map('n', '<leader><leader>', ':NvimTreeToggle<CR>', default_opts)
 map('n', '<leader>r', ':NvimTreeRefresh<CR>', default_opts)
@@ -57,6 +51,13 @@ map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', default_opts)
 map('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', default_opts)
 map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', default_opts)
 map('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>', default_opts)
+
+vim.cmd('command! Rename lua vim.lsp.buf.rename()')
+
+-- linters
+map('n', '<c-[>', '<cmd>lua vim.diagnostic.goto_prev()<CR>', default_opts)
+map('n', '<c-]>', '<cmd>lua vim.diagnostic.goto_next()<CR>', default_opts)
+map('n', 'gs', '<cmd>lua vim.lsp.buf.formatting()<CR>', default_opts)
 
 -- go to next/prev buffer
 map('n', 'gn', ':bn<CR>', default_opts)

@@ -55,3 +55,4 @@ export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always {} | head 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH="/usr/local/opt/gnupg@2.2/bin:$PATH"
+export NODE_PATH=$NODE_PATH:`npm root -g`
