@@ -9,6 +9,7 @@ plugins=(
     git
     nvm
     zsh-syntax-highlighting
+    zsh-npm-scripts-autocomplete
 )
 
 source $ZSH/oh-my-zsh.sh
