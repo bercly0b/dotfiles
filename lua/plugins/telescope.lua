@@ -1,4 +1,6 @@
-require('telescope').setup({
+local telescope = require('telescope')
+
+telescope.setup({
     defaults = {
         preview = {
             treesitter = false,
@@ -31,7 +33,20 @@ require('telescope').setup({
     },
     pickers = {
         buffers = {
-            theme = 'dropdown',
+            show_all_buffers = true,
+            sort_lastused = true,
+            previewer = false,
+            mappings = {
+                i = {
+                    ['<C-d>'] = 'delete_buffer',
+                },
+            },
+            layout_config = {
+                horizontal = {
+                    width = 0.5,
+                    height = 0.3,
+                },
+            },
         },
         find_files = {
             find_command = {
@@ -61,4 +76,4 @@ require('telescope').setup({
     },
 })
 
-require('telescope').load_extension('fzf')
+telescope.load_extension('fzf')
