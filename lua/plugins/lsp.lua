@@ -1,6 +1,6 @@
 local lsp_installer = require('nvim-lsp-installer')
 local cmp_lsp = require('cmp_nvim_lsp')
-local utils = require('utils')
+local utils = require('utils.filter-definition')
 
 local options = {
     tsserver = {
