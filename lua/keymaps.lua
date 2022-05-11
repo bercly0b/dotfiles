@@ -11,7 +11,7 @@ map('n', '<leader>cd', ':cd %:p:h<cr>:pwd<cr>', { silent = true })
 map('n', '<leader>n', ':noh<CR>', default_opts)
 
 -- Bufexplorer
-map('n', '<leader>p', ':BufExplorer<CR>', default_opts)
+map('n', '<leader>o', ':BufExplorer<CR>', default_opts)
 
 -- Fugitive
 map('n', '<leader>gs', ':Gstatus<CR>', default_opts)
@@ -41,12 +41,6 @@ map('n', '<leader>/', ':NvimTreeFindFile<CR>', default_opts)
 map('n', '<Leader>f', ':Telescope find_files<CR>', default_opts)
 map('n', '<Leader>a', ':Telescope live_grep<CR>', default_opts)
 map('n', '<Leader>w', ':Telescope grep_string<CR>', default_opts)
-map(
-    'n',
-    '<Leader>o',
-    '<CMD>lua require("telescope.builtin").buffers({ entry_maker = require("utils.custom-buffers").gen() })<CR>',
-    default_opts
-)
 
 -- lsp
 map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', default_opts)

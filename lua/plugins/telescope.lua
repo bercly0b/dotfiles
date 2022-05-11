@@ -32,22 +32,6 @@ telescope.setup({
         },
     },
     pickers = {
-        buffers = {
-            show_all_buffers = true,
-            sort_lastused = true,
-            previewer = false,
-            mappings = {
-                i = {
-                    ['<C-d>'] = 'delete_buffer',
-                },
-            },
-            layout_config = {
-                horizontal = {
-                    width = 0.5,
-                    height = 0.3,
-                },
-            },
-        },
         find_files = {
             find_command = {
                 'fd',
