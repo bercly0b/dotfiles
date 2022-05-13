@@ -1,6 +1,7 @@
 # dotfiles
 
 ## install
+- [packer.nvim](https://github.com/wbthomason/packer.nvim)
 - [tmux](https://github.com/tmux/tmux)
 - [zsh](https://ohmyz.sh/)
 - [iterm2](https://iterm2.com/)
