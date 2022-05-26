@@ -10,6 +10,29 @@ map('n', '<leader>cd', ':cd %:p:h<cr>:pwd<cr>', { silent = true })
 
 map('n', '<leader>n', ':noh<CR>', default_opts)
 
+-- add new line in normal mode
+map('n', '<S-CR>', 'O<Esc>j', { silent = true })
+map('n', '<CR>', 'o<Esc>k', { silent = true })
+
+-- copy/paste snippet
+map('v', '<c-c>', '"*y', default_opts)
+map('n', '<c-v>', '"*p', default_opts)
+
+-- go to next/prev buffer
+map('n', 'gn', ':bn<CR>', default_opts)
+map('n', 'gp', ':bp<CR>', default_opts)
+
+map('i', 'jk', '<ESC>', default_opts)
+
+-- stay in indent mode
+map('v', '<', '<gv', default_opts)
+map('v', '>', '>gv', default_opts)
+
+map('v', 'p', '"_dP', default_opts)
+
+-- Open GH
+map('n', '<C-g>h', ':OpenGithubFile<CR>', default_opts)
+
 -- Bufexplorer
 map('n', '<leader>o', ':BufExplorer<CR>', default_opts)
 
@@ -19,18 +42,6 @@ map('n', '<leader>gs', ':Gstatus<CR>', default_opts)
 map('n', '<leader>gd', ':Gvdiff!<CR>', default_opts)
 map('n', 'gdh', ':diffget //2<CR>', default_opts)
 map('n', 'gdl', ':diffget //3<CR>', default_opts)
-
--- add new line in normal mode
-map('n', '<S-CR>', 'O<Esc>j', { silent = true })
-map('n', '<CR>', 'o<Esc>k', { silent = true })
-
--- copy/paste snippet
-map('v', '<c-c>', '"*y', default_opts)
-map('n', '<c-v>', '"*p', default_opts)
-
-map('n', '<C-g>h', ':OpenGithubFile<CR>', { silent = true })
-
-map('i', 'jj', '<Esc>', { noremap = true })
 
 -- tree
 map('n', '<leader><leader>', ':NvimTreeToggle<CR>', default_opts)
@@ -52,16 +63,10 @@ map('n', 'gt', '<cmd>lua vim.lsp.buf.type_definition()<CR>', default_opts)
 map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', default_opts)
 map('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>', default_opts)
 
-vim.cmd('command! Rename lua vim.lsp.buf.rename()')
-
 -- linters
 map('n', '<c-[>', '<cmd>lua vim.diagnostic.goto_prev()<CR>', default_opts)
 map('n', '<c-]>', '<cmd>lua vim.diagnostic.goto_next()<CR>', default_opts)
 map('n', 'gs', '<cmd>lua vim.lsp.buf.format({ async = true })<CR>', default_opts)
-
--- go to next/prev buffer
-map('n', 'gn', ':bn<CR>', default_opts)
-map('n', 'gp', ':bp<CR>', default_opts)
 
 -- luasnip
 map('i', '<Tab>', 'v:lua.tab_complete()', { expr = true })
@@ -75,3 +80,5 @@ map('n', '<c-s>o', '<cmd>so ~/.config/nvim/init.vim<CR>', { silent = false, nore
 
 -- json prettify
 vim.cmd('command! JSONprettify %!python -m json.tool')
+-- Rename
+vim.cmd('command! Rename lua vim.lsp.buf.rename()')
