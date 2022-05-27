@@ -1,6 +1,8 @@
 # dotfiles
 
-## install
+Configuration files for zsh, tmux and neovim
+
+## deps
 - [packer.nvim](https://github.com/wbthomason/packer.nvim)
 - [tmux](https://github.com/tmux/tmux)
 - [zsh](https://ohmyz.sh/)
@@ -10,31 +12,18 @@
 - [fd-find](https://github.com/sharkdp/fd)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 
-## clone
+## install
 ```bash
 mkdir ~/self
 git clone https://github.com/bercly0b/dotfiles.git ~/self/dotfiles
-```
 
-## configure
-~/.config/nvim/init.vim
-```bash
-set runtimepath^=~/.vim
-set runtimepath+=~/self/dotfiles/snippets
-set runtimepath+=~/self/dotfiles
-set runtimepath+=~/.vim/after
-let &packpath=&runtimepath
-lua require('init')
-```
+ln -s ~/self/dotfiles/lua ~/.config/nvim/lua
+ln -s ~/self/dotfiles/snippets ~/.config/nvim/snippets
 
-~/.tmux.conf
-```bash
-source-file ~/self/dotfiles/.tmux.conf
-```
-
-~/.zsh.rc
-```bash
-source ~/self/dotfiles/.zshrc
+# next commands will overwrite your config files. be careful
+echo "require('lua/init')" > ~/.config/nvim/init.lua
+echo "source-file ~/self/dotfiles/.tmux.conf" > ~/.tmux.conf
+echo "source ~/self/dotfiles/.zshrc" > ~/.zsh.rc
 ```
 
 ## TODO
