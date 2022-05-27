@@ -3,6 +3,10 @@ local packer = require('packer')
 return packer.startup(function(use)
     use('wbthomason/packer.nvim')
 
+    -- performance
+    use('lewis6991/impatient.nvim')
+    use('nathom/filetype.nvim')
+
     use('windwp/nvim-autopairs')
 
     use('christoomey/vim-tmux-navigator')
