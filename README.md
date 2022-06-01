@@ -21,9 +21,10 @@ ln -s ~/self/dotfiles/lua ~/.config/nvim/lua
 ln -s ~/self/dotfiles/snippets ~/.config/nvim/snippets
 
 # next commands will overwrite your config files. be careful
-echo "require('lua/init')" > ~/.config/nvim/init.lua
+echo "require('init')" > ~/.config/nvim/init.lua
 echo "source-file ~/self/dotfiles/.tmux.conf" > ~/.tmux.conf
 echo "source ~/self/dotfiles/.zshrc" > ~/.zsh.rc
+rm ~/.config/nvim/init.vim
 ```
 
 ## TODO

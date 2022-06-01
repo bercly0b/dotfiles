@@ -11,8 +11,8 @@ return packer.startup(function(use)
 
     use('christoomey/vim-tmux-navigator')
 
-    use({ 'tyru/open-browser.vim', opt = true, cmd = 'OpenGithubFile' })
-    use({ 'tyru/open-browser-github.vim', opt = true, cmd = 'OpenGithubFile' })
+    use({ 'tyru/open-browser.vim', opt = true, cmd = 'OpenGithubFile' }) --
+    use({ 'tyru/open-browser-github.vim', opt = true, cmd = 'OpenGithubFile' }) --
 
     -- g/
     use('google/vim-searchindex')
@@ -20,7 +20,7 @@ return packer.startup(function(use)
     use('kyazdani42/nvim-web-devicons')
 
     -- navigation
-    use('jlanzarotta/bufexplorer')
+    use('jlanzarotta/bufexplorer') --
     use('kyazdani42/nvim-tree.lua')
 
     -- gS gJ
@@ -35,23 +35,23 @@ return packer.startup(function(use)
     -- theme
     use('navarasu/onedark.nvim')
 
-    use('tpope/vim-commentary')
-    use('tpope/vim-sensible')
-    use('wellle/targets.vim')
+    use('tpope/vim-commentary') --
+    use('tpope/vim-sensible') --
+    use('wellle/targets.vim') --
 
     -- change/edit brackets
-    use('tpope/vim-surround')
+    use('tpope/vim-surround') --
 
     -- git
-    use('airblade/vim-gitgutter')
-    use('tpope/vim-fugitive')
+    use('airblade/vim-gitgutter') --
+    use('tpope/vim-fugitive') --
 
     -- status line
     use('nvim-lualine/lualine.nvim')
     use('bercly0b/lualine-lsp-progress')
 
     -- syntax highligt
-    use({ 'wavded/vim-stylus', ft = { 'css', 'scss', 'less', 'sass' } })
+    use({ 'wavded/vim-stylus', ft = { 'css', 'scss', 'less', 'sass' } }) --
     use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
 
     -- lsp
