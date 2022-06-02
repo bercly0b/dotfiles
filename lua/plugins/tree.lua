@@ -1,11 +1,12 @@
-vim.g.nvim_tree_special_files = { Makefile = 1, MAKEFILE = 1 }
-
 local nvim_tree = require('nvim-tree')
 local tree_cb = require('nvim-tree.config').nvim_tree_callback
 
 nvim_tree.setup({
     git = {
         ignore = false,
+    },
+    renderer = {
+        special_files = { Makefile = 1, MAKEFILE = 1 },
     },
     view = {
         width = 40,
