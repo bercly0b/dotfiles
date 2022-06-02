@@ -14,6 +14,7 @@ require('keymaps')
 
 require('plugins/autopairs')
 require('plugins/cmp')
+require('plugins/git')
 require('plugins/luasnip')
 require('plugins/lsp')
 require('plugins/null-ls')

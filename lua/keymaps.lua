@@ -42,6 +42,8 @@ map('n', '<leader>gs', ':Gstatus<CR>', default_opts)
 map('n', '<leader>gd', ':Gvdiff!<CR>', default_opts)
 map('n', 'gdh', ':diffget //2<CR>', default_opts)
 map('n', 'gdl', ':diffget //3<CR>', default_opts)
+-- Gitsigns
+map('n', '<leader>b', ':Gitsigns toggle_current_line_blame<CR>', default_opts)
 
 -- tree
 map('n', '<leader><leader>', ':NvimTreeToggle<CR>', default_opts)
