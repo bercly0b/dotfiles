@@ -8,6 +8,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
     git
     nvm
+    pass
     zsh-syntax-highlighting
 )
 
