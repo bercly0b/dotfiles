@@ -2,6 +2,8 @@ require('lualine').setup {
     options = {
         theme = 'auto',
         disabled_filetypes = { 'NvimTree' },
+        section_separators = '',
+        component_separators = '',
     },
     sections = {
         lualine_b = {

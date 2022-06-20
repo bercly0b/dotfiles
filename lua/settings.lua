@@ -41,7 +41,7 @@ set.signcolumn = 'yes'
 
 set.termguicolors = true
 
-vim.g.node_path = '~/.nvm/versions/node/v12.20.0/bin/node'
+vim.g.node_path = '/usr/bin/node'
 
 -- Indent guides
 vim.g.indent_guides_enable_on_vim_startup = 0
