@@ -9,7 +9,6 @@ plugins=(
     git
     nvm
     zsh-syntax-highlighting
-    zsh-npm-scripts-autocomplete
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -23,13 +22,6 @@ alias gb='git branch --sort=-committerdate '
 alias gc='git commit'
 alias gd='git diff'
 alias go='git checkout '
-
-alias as='arc status '
-alias aa='arc add '
-alias ab='arc branch '
-alias ac='arc commit'
-alias ad='arc diff'
-alias ao='arc checkout '
 
 alias got='git '
 alias get='git '
