@@ -52,7 +52,7 @@ return packer.startup(function(use)
 
     -- syntax highligt
     use({ 'wavded/vim-stylus', ft = { 'css', 'scss', 'less', 'sass' } }) --
-    use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
+    use({ 'nvim-treesitter/nvim-treesitter', do = ':TSUpdate' })
 
     -- lsp
     use('neovim/nvim-lspconfig')
