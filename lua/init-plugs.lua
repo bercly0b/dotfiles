@@ -11,8 +11,8 @@ return packer.startup(function(use)
 
     use('christoomey/vim-tmux-navigator')
 
-    use({ 'tyru/open-browser.vim', opt = true, cmd = 'OpenGithubFile' }) --
-    use({ 'tyru/open-browser-github.vim', opt = true, cmd = 'OpenGithubFile' }) --
+    use({ 'tyru/open-browser.vim' }) --
+    use({ 'tyru/open-browser-github.vim' }) --
 
     -- g/
     use('google/vim-searchindex')
@@ -52,7 +52,7 @@ return packer.startup(function(use)
 
     -- syntax highligt
     use({ 'wavded/vim-stylus', ft = { 'css', 'scss', 'less', 'sass' } }) --
-    use({ 'nvim-treesitter/nvim-treesitter', do = ':TSUpdate' })
+    use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
 
     -- lsp
     use('neovim/nvim-lspconfig')
