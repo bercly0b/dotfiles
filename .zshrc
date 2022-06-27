@@ -1,6 +1,5 @@
 export ZSH=~/.oh-my-zsh
 export TERM=xterm-256color
-export BAT_THEME="One Dark"
 export PATH="$HOME/bin:$PATH"
 
 ZSH_THEME="robbyrussell"
@@ -28,11 +27,7 @@ alias got='git '
 alias get='git '
 
 alias top='htop'
-alias cat='bat'
-alias mmount='~/.mmount-sshfs.sh'
-
 alias vim='nvim'
-
 alias tmux='tmux -2'
 
 ZSH_TMUX_FIXTERM=true
