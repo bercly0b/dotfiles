@@ -45,3 +45,5 @@ export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always {} | head 
 
 export PATH="/usr/local/opt/gnupg@2.2/bin:$PATH"
 export NODE_PATH=$NODE_PATH:`npm root -g`
+
+export PATH="/opt/homebrew/opt/gnupg@2.2/bin:$PATH"
