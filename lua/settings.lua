@@ -18,12 +18,12 @@ set.lazyredraw = true
 -- Show matching brackets when text indicator is over them
 set.showmatch = true
 
-set.tabstop = 4
 set.softtabstop = 4
 set.shiftwidth = 4
 set.expandtab = true
 set.smarttab = true
 set.autoindent = true
+set.shiftround = true
 set.scrolloff = 7
 
 set.wildignore = set.wildignore + '*/node_modules/*,/.git/*'
