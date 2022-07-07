@@ -16,7 +16,7 @@ source $ZSH/oh-my-zsh.sh
 bindkey '^[b' backward-word
 bindkey '^[f' forward-word
 
-alias gs='git status '
+alias gs='git status --short '
 alias ga='git add '
 alias gb='git branch --sort=-committerdate '
 alias gc='git commit'
