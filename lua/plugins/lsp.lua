@@ -1,7 +1,9 @@
+local lspconfig = require('lspconfig')
 local lsp_installer = require('nvim-lsp-installer')
 local cmp_lsp = require('cmp_nvim_lsp')
 local utils = require('utils.filter-definition')
 
+local servers = { 'tsserver', 'sumneko_lua', 'pyright' }
 local options = {
     tsserver = {
         on_attach = function(client)
@@ -33,16 +35,15 @@ local options = {
                 }
             }
         }
-    }
+    },
 }
 
-lsp_installer.on_server_ready(
-    function(server)
-        local opts = options[server.name] or {}
+lsp_installer.setup({ ensure_installed = servers })
 
-        server:setup(opts)
-    end
-)
+for _, name in pairs(servers) do
+    local opts = options[name] or {}
+    lspconfig[name].setup(opts)
+end
 
 vim.diagnostic.config({
     virtual_text = false,
