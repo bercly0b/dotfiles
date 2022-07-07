@@ -5,10 +5,11 @@ Configuration files for zsh, tmux and neovim
 ## Installation
 ```bash
 sudo apt update && sudo apt install -y zsh
-yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # next script will overwrite your zsh, neovim and tmux config files in home dir. be careful
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/bercly0b/dotfiles/master/init-env.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/bercly0b/dotfiles/master/init-env.sh)"
+source ~/.zshrc
 ```
 
 ## Manual installation

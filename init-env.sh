@@ -48,8 +48,14 @@ if [[ $(command -v npm) ]]; then
     sudo npm install -g eslint_d
 fi
 
+# flake8
+if [[ $(command -v pip3) ]]; then
+    _print "Installing flake8"
+    pip3 install flake8
+fi
+
 # set vim as git editor
-git config --global core.editor "vim"
+git config --global core.editor "nvim"
 
 mkdir ~/self
 mkdir -p ~/.config/nvim
