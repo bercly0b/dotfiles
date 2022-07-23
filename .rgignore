@@ -8,5 +8,6 @@ ci/
 build/
 
 package-lock.json
+yarn.lock
 *.png
 *.json.gz
