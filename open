@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# A script to open a webpage on any platform
+
+set -eu
+
+is_app_installed() {
+  type "$1" &>/dev/null
+}
+
+# If we're called with an argument, open that, otherwise assume it's stdin
+if [ "$#" -eq 0 ]; then
+  echo "Reading from stdin. Enter the URL followed by EOF (Ctrl+D)."
+  buf=$(cat "$@")
+else
+  buf=$1
+fi
+
+open_backend_remote_tunnel_port=$(tmux show-option -gvq "@open_backend_remote_tunnel_port")
+
+# Resolve open backend: open (OSX), xdg-open (Linux)
+open_backend=""
+echo $0
+if is_app_installed open && [ "$(which open)" != "$0" ]; then
+  open_backend="open"
+elif [ -n "${open_backend_remote_tunnel_port-}" ] && [ "$(ss -n -4 state listening "( sport = $open_backend_remote_tunnel_port )" | tail -n +2 | wc -l)" -eq 1 ]; then
+  open_backend="base64 | nc -N localhost $open_backend_remote_tunnel_port"
+elif [ -n "${DISPLAY-}" ] && is_app_installed xdg-open; then
+  open_backend="xdg-open"
+fi
+
+# if open backend is resolved, open and exit
+if [ -n "$open_backend" ]; then
+  printf "%s" "$buf" | eval "$open_backend"
+  exit;
+else
+  echo "No backend available. Ensure open or xdg-open is available, or the remote server is listening if using over SSH."
+  exit 1
+fi
