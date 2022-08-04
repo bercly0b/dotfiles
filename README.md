@@ -10,6 +10,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # next script will overwrite your zsh, neovim and tmux config files in home dir. be careful
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/bercly0b/dotfiles/master/init-env.sh)"
 source ~/.zshrc
+
+# do not forget!
+git config --global user.name "USERNAME"
+git config --global user.email "MY_NAME@example.com"
 ```
 
 ## Manual installation
