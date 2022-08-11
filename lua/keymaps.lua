@@ -14,6 +14,9 @@ map('n', '<leader>n', ':noh<CR>', default_opts)
 map('n', '<S-CR>', 'O<Esc>j', { silent = true })
 map('n', '<CR>', 'o<Esc>k', { silent = true })
 
+-- do not jump on search word
+map('n', '*', '*``', { silent = true })
+
 -- copy/paste snippet
 map('v', '<c-c>', '"*y', default_opts)
 map('n', '<c-v>', '"*p', default_opts)
