@@ -12,7 +12,7 @@ require('settings')
 require('theme')
 require('keymaps')
 
-require('plugins/autopairs')
+-- require('plugins/autopairs')
 require('plugins/cmp')
 require('plugins/git')
 require('plugins/luasnip')
