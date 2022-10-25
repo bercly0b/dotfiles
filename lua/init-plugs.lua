@@ -34,7 +34,7 @@ return packer.startup(function(use)
 
     -- theme
     -- use('navarasu/onedark.nvim')
-    use('ellisonleao/gruvbox.nvim')
+    use('projekt0n/github-nvim-theme')
 
     use('tpope/vim-commentary') --
     use('tpope/vim-sensible') --

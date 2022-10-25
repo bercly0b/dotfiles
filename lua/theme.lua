@@ -5,11 +5,7 @@
 -- vim.cmd('highlight NvimTreeNormal guibg='..colors.bg0)
 -- vim.cmd('highlight NvimTreeEndOfBuffer guibg='..colors.bg0)
 
-require("gruvbox").setup({
-  inverse = true,
-  invert_selection = false,
-  contrast = "soft", -- can be "hard", "soft" or empty string
+require('github-theme').setup({
+    theme_style = 'light_default',
+    dark_float = true,
 })
-
-vim.o.background = "light"
-vim.cmd([[colorscheme gruvbox]])
