@@ -19,7 +19,7 @@ sudo ln -s $(which fdfind) /bin/fd
 
 # nvim
 _print "Installing Neovim"
-curl -LO -s https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.deb
+curl -LO -s https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb
 sudo apt install -y ./nvim-linux64.deb
 rm ./nvim-linux64.deb
 
