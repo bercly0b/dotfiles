@@ -6,6 +6,6 @@
 -- vim.cmd('highlight NvimTreeEndOfBuffer guibg='..colors.bg0)
 
 require('github-theme').setup({
-    theme_style = 'light_default',
+    theme_style = 'light',
     dark_float = true,
 })
