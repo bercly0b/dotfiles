@@ -3,6 +3,8 @@ local lsp_installer = require('nvim-lsp-installer')
 local cmp_lsp = require('cmp_nvim_lsp')
 local utils = require('utils.filter-definition')
 
+local capabilities = cmp_lsp.default_capabilities()
+
 local servers = { 'tsserver', 'sumneko_lua', 'pyright' }
 local options = {
     tsserver = {
@@ -11,9 +13,7 @@ local options = {
             client.server_capabilities.documentRangeFormattingProvider = false
         end,
 
-        capabilities = cmp_lsp.update_capabilities(
-            vim.lsp.protocol.make_client_capabilities()
-        ),
+        capabilities = capabilities,
 
         handlers = {
             ['textDocument/definition'] = function(err, result, method, ...)
