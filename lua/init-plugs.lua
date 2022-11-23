@@ -33,7 +33,8 @@ return packer.startup(function(use)
     use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
 
     -- theme
-    use('navarasu/onedark.nvim')
+    -- use('navarasu/onedark.nvim')
+    use('projekt0n/github-nvim-theme')
 
     use('tpope/vim-commentary') --
     use('tpope/vim-sensible') --
