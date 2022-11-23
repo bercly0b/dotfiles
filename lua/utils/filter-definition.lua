@@ -17,7 +17,7 @@ function M.filter(arr, fn)
 end
 
 function M.filterReactDTS(value)
-    return string.match(value.uri, 'react/index.d.ts') == nil
+    return string.match(value.targetUri, 'react/index.d.ts') == nil
 end
 
 return M
