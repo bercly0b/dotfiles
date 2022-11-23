@@ -8,6 +8,7 @@ return packer.startup(function(use)
     use('nathom/filetype.nvim')
 
     use('windwp/nvim-autopairs')
+    use('windwp/nvim-ts-autotag')
 
     use('christoomey/vim-tmux-navigator')
 
