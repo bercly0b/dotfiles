@@ -63,8 +63,10 @@ return packer.startup(function(use)
     })
 
     -- lsp
+    use('williamboman/mason.nvim')
+    use('williamboman/mason-lspconfig.nvim')
     use('neovim/nvim-lspconfig')
-    use('williamboman/nvim-lsp-installer')
+
     -- linters
     use('jose-elias-alvarez/null-ls.nvim')
 
