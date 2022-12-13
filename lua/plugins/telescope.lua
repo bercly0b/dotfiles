@@ -27,7 +27,7 @@ telescope.setup({
             horizontal = {
                 height = 0.5,
                 prompt_position = 'bottom',
-                width = 0.7,
+                width = 0.8,
             },
         },
     },
@@ -42,8 +42,8 @@ telescope.setup({
             },
             layout_config = {
                 horizontal = {
-                    width = 0.4,
-                    height = 0.3,
+                    width = 0.7,
+                    height = 0.35,
                 },
             },
             previewer = false,

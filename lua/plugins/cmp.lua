@@ -45,12 +45,14 @@ cmp.setup({
     sources = cmp.config.sources({
         {
             name = 'buffer',
+            priority = 2,
+            max_item_count = 3,
             get_bufnrs = function()
                 return vim.api.nvim_list_bufs()
             end
         },
-        { name = 'nvim_lsp' },
-        { name = 'luasnip' },
+        { name = 'nvim_lsp', priority = 1 },
+        { name = 'luasnip', priority = 1 },
     },
     {
         { name = 'buffer' },
