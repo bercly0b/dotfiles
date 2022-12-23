@@ -1,7 +1,5 @@
 vim.o.background = 'dark'
 
-require('gruvbox').setup({
-    inverse = false,
-})
+require('gruvbox').setup({})
 
 vim.cmd('colorscheme gruvbox')
