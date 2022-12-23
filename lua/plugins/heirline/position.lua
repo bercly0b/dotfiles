@@ -25,7 +25,7 @@ local ScrollBar ={
 
     hl = function()
         if conditions.is_active() then
-            return { fg = 'red', bg = 'fg3' }
+            return { fg = 'bg4', bg = 'fg3' }
         else
             return { fg = 'bg1', bg = 'bg1' }
         end
