@@ -15,9 +15,6 @@ return packer.startup(function(use)
     use({ 'tyru/open-browser.vim' }) --
     use({ 'tyru/open-browser-github.vim' }) --
 
-    -- g/
-    use('google/vim-searchindex')
-
     use('kyazdani42/nvim-web-devicons')
 
     -- navigation
@@ -48,8 +45,7 @@ return packer.startup(function(use)
     use('tpope/vim-fugitive') --
 
     -- status line
-    use('nvim-lualine/lualine.nvim')
-    use('bercly0b/lualine-lsp-progress')
+    use('rebelot/heirline.nvim')
 
     -- syntax highligt
     use({ 'wavded/vim-stylus', ft = { 'css', 'scss', 'less', 'sass' } }) --
