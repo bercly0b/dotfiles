@@ -14,7 +14,7 @@ _print "Updating packages information"
 sudo apt update
 
 _print "Installing dependencies"
-sudo apt install -y tmux fd-find ripgrep htop
+sudo apt install -y tmux fd-find ripgrep htop libffi-dev libcurl4-gnutls-dev librtmp-dev
 sudo ln -s $(which fdfind) /bin/fd
 
 # nvim
@@ -41,18 +41,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git\
 _print "Installing fzf"
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 yes | ~/.fzf/install
-
-# eslint_d
-if [[ $(command -v npm) ]]; then
-    _print "Installing esling_d"
-    sudo npm install -g eslint_d
-fi
-
-# flake8
-if [[ $(command -v pip3) ]]; then
-    _print "Installing flake8"
-    pip3 install flake8
-fi
 
 # set vim as git editor
 git config --global core.editor "nvim"
