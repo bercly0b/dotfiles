@@ -73,6 +73,8 @@ local NoneStatusLine = {
 }
 
 heirline.setup({
-    fallthrough = false,
-    NoneStatusLine, InactiveStatusLine, DefaultStatusLine,
+    statusline = {
+        fallthrough = false,
+        NoneStatusLine, InactiveStatusLine, DefaultStatusLine,
+    }
 })
