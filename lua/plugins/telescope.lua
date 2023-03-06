@@ -24,12 +24,14 @@ telescope.setup({
             '--ignore-file', vim.fn.expand('~/self/dotfiles/.rgignore'),
         },
         layout_config = {
-            horizontal = {
-                height = 0.5,
-                prompt_position = 'bottom',
-                width = 0.8,
+            vertical = {
+                height = 0.99,
+                width = 0.99,
+                prompt_position = 'top',
             },
         },
+        layout_strategy = 'vertical',
+        sorting_strategy = 'ascending',
     },
     pickers = {
         find_files = {
@@ -40,14 +42,6 @@ telescope.setup({
                 '--hidden',
                 '--ignore-file', vim.fn.expand('~/self/dotfiles/.rgignore'),
             },
-            layout_config = {
-                horizontal = {
-                    width = 0.7,
-                    height = 0.35,
-                },
-            },
-            previewer = false,
-            prompt_title = false,
         },
     },
     extensions = {
