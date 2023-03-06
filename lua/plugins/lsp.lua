@@ -6,7 +6,7 @@ local utils = require('utils.filter-definition')
 
 local capabilities = cmp_lsp.default_capabilities()
 
-local servers = { 'tsserver', 'sumneko_lua', 'pyright' }
+local servers = { 'tsserver', 'lua_ls', 'pyright' }
 local options = {
     tsserver = {
         on_attach = function(client)
