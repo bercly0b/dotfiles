@@ -63,6 +63,7 @@ return packer.startup(function(use)
     use('neovim/nvim-lspconfig')
 
     -- linters
+    use('jay-babu/mason-null-ls.nvim')
     use('jose-elias-alvarez/null-ls.nvim')
 
     -- autocomplete

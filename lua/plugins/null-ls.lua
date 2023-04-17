@@ -1,9 +1,15 @@
 local null_ls = require('null-ls')
+local mason_null_ls = require('mason-null-ls')
+
 -- local command_resolver = require('null-ls.helpers.command_resolver')
 
 -- local is_pnp = vim.fn.findfile('.pnp.js', '.')
 local eslint_diagnostics = null_ls.builtins.diagnostics.eslint_d
 local eslint_formatting = null_ls.builtins.formatting.eslint_d
+
+mason_null_ls.setup({
+    ensure_installed = { 'eslint_d' }
+})
 
 -- if (is_pnp) then
 --     eslint_diagnostics = null_ls.builtins.diagnostics.eslint.with({
