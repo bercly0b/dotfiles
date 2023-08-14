@@ -1,5 +1,6 @@
-vim.o.background = 'dark'
+require('catppuccin').setup({
+    flavour = 'latte', -- latte, frappe, macchiato, mocha
+})
 
-require('gruvbox').setup({})
-
-vim.cmd('colorscheme gruvbox')
+-- setup must be called before loading
+vim.cmd.colorscheme('catppuccin')
