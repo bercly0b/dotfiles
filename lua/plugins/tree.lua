@@ -1,7 +1,27 @@
 local nvim_tree = require('nvim-tree')
-local tree_cb = require('nvim-tree.config').nvim_tree_callback
+
+local function on_attach(bufnr)
+    local api = require('nvim-tree.api')
+
+    local function opts(desc)
+        return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+    end
+
+    api.config.mappings.default_on_attach(bufnr)
+
+    vim.keymap.set('n', 's', api.node.open.vertical, opts('Open: Vertical Split'))
+    vim.keymap.set('n', 'v', api.node.open.horizontal, opts('Open: Horizontal Split'))
+    vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
+    vim.keymap.set('n', 'I', api.tree.toggle_hidden_filter, opts('Toggle Dotfiles'))
+    vim.keymap.set('n', 'N', api.fs.create,  opts('Create'))
+    vim.keymap.set('n', 'D', api.fs.remove,  opts('Delete'))
+    vim.keymap.set('n', 'o', api.node.run.system, opts('Run System'))
+    vim.keymap.set('n', 'm', api.fs.rename, opts('Rename'))
+    vim.keymap.set('n', 'x', api.node.navigate.parent_close, opts('Close Directory'))
+end
 
 nvim_tree.setup({
+    on_attach = on_attach,
     git = {
         ignore = false,
     },
@@ -10,25 +30,5 @@ nvim_tree.setup({
     },
     view = {
         width = 40,
-        mappings = {
-            list = {
-                { key = 'P', cb = tree_cb('parent_node') },
-                { key = 's', cb = tree_cb('split') },
-                { key = 'v', cb = tree_cb('vsplit') },
-                { key = '?', cb = tree_cb('toggle_help') },
-                { key = 'x', cb = tree_cb('close_node') },
-                { key = 'I', cb = tree_cb('toggle_dotfiles') },
-                { key = 'y', cb = tree_cb('copy_name') },
-                { key = 'Y', cb = tree_cb('copy_path') },
-                { key = 'gy', cb = tree_cb('copy_absolute_path') },
-                { key = 'R', cb = tree_cb('refresh') },
-                { key = 'N', cb = tree_cb('create') },
-                { key = 'D', cb = tree_cb('remove') },
-                { key = 'o', cb = tree_cb('system_open') },
-                { key = 'c', cb = tree_cb('copy') },
-                { key = 'p', cb = tree_cb('paste') },
-                { key = 'm', cb = tree_cb('rename') },
-            }
-        }
     }
 })
