@@ -31,17 +31,17 @@ heirline.load_colors({
     git_add = utils.get_highlight('diffAdded').fg,
     git_change = utils.get_highlight('diffChanged').fg,
 
-    bg0 = utils.get_highlight('GruvboxBg0').fg,
-    bg1 = utils.get_highlight('GruvboxBg1').fg,
-    bg2 = utils.get_highlight('GruvboxBg2').fg,
-    bg3 = utils.get_highlight('GruvboxBg3').fg,
-    bg4 = utils.get_highlight('GruvboxBg4').fg,
+    bg0 = utils.get_highlight('FoldColumn').fg,
+    bg1 = utils.get_highlight('Conceal').fg,
+    bg2 = utils.get_highlight('Pmenu').fg,
+    bg3 = utils.get_highlight('FloatBorder').fg,
+    bg4 = utils.get_highlight('NormalFloat').fg,
 
-    fg0 = utils.get_highlight('GruvboxFg0').fg,
-    fg1 = utils.get_highlight('GruvboxFg1').fg,
-    fg2 = utils.get_highlight('GruvboxFg2').fg,
-    fg3 = utils.get_highlight('GruvboxFg3').fg,
-    fg4 = utils.get_highlight('GruvboxFg4').fg,
+    fg0 = utils.get_highlight('ColorColumn').bg,
+    fg1 = utils.get_highlight('SignColumn').fg,
+    fg2 = utils.get_highlight('Directory').fg,
+    fg3 = utils.get_highlight('FloatTitle').fg,
+    fg4 = utils.get_highlight('Normal').fg,
 })
 
 local DefaultStatusLine = {
