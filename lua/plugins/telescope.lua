@@ -2,9 +2,9 @@ local telescope = require('telescope')
 
 telescope.setup({
     defaults = {
-        preview = {
-            treesitter = false,
-        },
+        -- preview = {
+        --     treesitter = false,
+        -- },
         mappings = {
             i = {
                 ['<C-j>'] = 'move_selection_next',
@@ -27,6 +27,7 @@ telescope.setup({
             vertical = {
                 height = 0.99,
                 width = 0.99,
+                preview_cutoff = 10,
                 prompt_position = 'top',
             },
         },
