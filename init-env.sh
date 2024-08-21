@@ -19,9 +19,9 @@ sudo ln -s $(which fdfind) /bin/fd
 
 # nvim
 _print "Installing Neovim"
-sudo add-apt-repository -y ppa:neovim-ppa/unstable
-sudo apt update
-sudo apt install neovim -y
+curl -LO -s https://github.com/neovim/neovim/releases/download/v0.10.0/nvim-linux64.tar.gz
+tar -xf nvim-linux64.tar.gz
+export PATH=/home/hh/nvim-linux64/bin:$PATH
 
 # packer
 _print "Installing Packer"
@@ -41,6 +41,10 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git\
 _print "Installing fzf"
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 yes | ~/.fzf/install
+
+# npm deps
+_print "Installing npm deps"
+sudo npm install -g typescript typescript-language-server eslint_d
 
 # set vim as git editor
 git config --global core.editor "nvim"
