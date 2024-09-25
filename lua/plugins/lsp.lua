@@ -6,9 +6,9 @@ local utils = require('utils.filter-definition')
 
 local capabilities = cmp_lsp.default_capabilities()
 
-local servers = { 'tsserver', 'lua_ls', 'pyright' }
+local servers = { 'ts_ls', 'lua_ls', 'pyright' }
 local options = {
-    tsserver = {
+    ts_ls = {
         on_attach = function(client)
             client.server_capabilities.documentFormattingProvider = false
             client.server_capabilities.documentRangeFormattingProvider = false
