@@ -31,7 +31,8 @@ return packer.startup(function(use)
     use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
 
     -- theme
-    use('catppuccin/nvim')
+    -- use('catppuccin/nvim')
+    use('navarasu/onedark.nvim')
 
     use('tpope/vim-commentary') --
     use('tpope/vim-sensible') --
@@ -45,7 +46,8 @@ return packer.startup(function(use)
     use('tpope/vim-fugitive') --
 
     -- status line
-    use('rebelot/heirline.nvim')
+    -- use('rebelot/heirline.nvim')
+    use('nvim-lualine/lualine.nvim')
 
     -- syntax highligt
     use({ 'wavded/vim-stylus', ft = { 'css', 'scss', 'less', 'sass' } }) --
