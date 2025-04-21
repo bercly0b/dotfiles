@@ -6,7 +6,6 @@ ZSH_THEME="robbyrussell"
 
 plugins=(
     git
-    nvm
     pass
     zsh-syntax-highlighting
 )
@@ -33,19 +32,34 @@ alias tmux='tmux -2'
 alias open='~/self/dotfiles/open'
 
 ZSH_TMUX_FIXTERM=true
+DISABLE_AUTO_UPDATE=true
+
+autoload -Uz compinit
+compinit -C
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-if [ -f .nvmrc ]; then nvm use; fi # This switches nvm to node version from .nvmrc
+
+# NVM lazy loading
+nvm_lazy_load() {
+  unfunction nvm node npm npx >/dev/null 2>&1
+  [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+  command "$@"
+}
+
+function nvm()  { nvm_lazy_load nvm "$@" }
+function node() { nvm_lazy_load node "$@" }
+function npm()  { nvm_lazy_load npm "$@" }
+function npx()  { nvm_lazy_load npx "$@" }
+
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --ignore-file /home/$(whoami)/self/dotfiles/.rdignore'
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --no-mouse --exact'
 export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always {} | head -200'"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-export NODE_PATH=$NODE_PATH:`npm root -g`
+# Load FZF lazily
+if [[ -n $DISPLAY ]] || [[ $TERM_PROGRAM == "iTerm.app" ]]; then
+  [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
+fi
 
 export PATH="/usr/local/opt/gnupg@2.2/bin:$PATH"
 export PATH="/opt/homebrew/opt/gnupg@2.2/bin:$PATH"
