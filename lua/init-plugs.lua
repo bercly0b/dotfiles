@@ -45,12 +45,15 @@ return packer.startup(function(use)
     use('lewis6991/gitsigns.nvim')
     use('tpope/vim-fugitive') --
 
+    -- command line popup
+    use({ 'folke/noice.nvim', requires = { 'MunifTanjim/nui.nvim' } })
+
     -- status line
     -- use('rebelot/heirline.nvim')
     use('nvim-lualine/lualine.nvim')
 
     -- syntax highligt
-    use({ 'wavded/vim-stylus', ft = { 'css', 'scss', 'less', 'sass' } }) --
+    use({ 'wavded/vim-stylus', ft = { 'css', 'scss', 'less', 'sass' } })
     use({
         'nvim-treesitter/nvim-treesitter',
         run = function()

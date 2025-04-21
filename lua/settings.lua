@@ -13,8 +13,6 @@ set.cc = '0'
 -- Ignore case when searching
 set.smartcase = true
 set.ignorecase = true
--- Don't redraw while executing macros (good performance config)
-set.lazyredraw = true
 -- Show matching brackets when text indicator is over them
 set.showmatch = true
 
