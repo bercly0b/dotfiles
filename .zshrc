@@ -35,7 +35,7 @@ ZSH_TMUX_FIXTERM=true
 DISABLE_AUTO_UPDATE=true
 
 autoload -Uz compinit
-compinit -C
+compinit -i
 
 export NVM_DIR="$HOME/.nvm"
 
@@ -56,11 +56,12 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --ignore-file /home/$(
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --no-mouse --exact'
 export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always {} | head -200'"
 
-# Load FZF lazily
-if [[ -n $DISPLAY ]] || [[ $TERM_PROGRAM == "iTerm.app" ]]; then
-  [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
-fi
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH="/usr/local/opt/gnupg@2.2/bin:$PATH"
 export PATH="/opt/homebrew/opt/gnupg@2.2/bin:$PATH"
 export PATH="/home/$(whoami)/.local/bin:$PATH"
+
+export LDFLAGS="-L/opt/homebrew/opt/sqlite/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/sqlite/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/sqlite/lib/pkgconfig"
