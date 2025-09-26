@@ -1,9 +1,19 @@
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
-require('blink.cmp').setup({
+local cmp = require('blink.cmp')
+
+local function smart_select_next()
+    if cmp.is_visible() then
+        cmp.select_next()
+    else
+        cmp.show()
+    end
+end
+
+cmp.setup({
     keymap = {
         preset = 'default',
-        ['<C-j>'] = { 'select_next', 'fallback' },
+        ['<C-j>'] = { smart_select_next, 'fallback' },
         ['<C-k>'] = { 'select_prev', 'fallback' },
         ['<C-[>'] = { 'hide', 'fallback' },
         ['<CR>'] = { 'accept', 'fallback' },
@@ -53,7 +63,7 @@ require('blink.cmp').setup({
             }
         },
         keymap = {
-            ['<C-j>'] = { 'select_next' },
+            ['<C-j>'] = { smart_select_next },
             ['<C-k>'] = { 'select_prev' },
             ['<C-[>'] = { 'hide' },
             ['<CR>'] = { 'accept', 'fallback' },
