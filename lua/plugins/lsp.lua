@@ -1,4 +1,3 @@
-local lspconfig = require('lspconfig')
 local mason = require('mason')
 local mason_lspconfig = require('mason-lspconfig')
 local cmp_lsp = require('cmp_nvim_lsp')
@@ -44,7 +43,7 @@ mason_lspconfig.setup({ ensure_installed = servers })
 
 for _, name in pairs(servers) do
     local opts = options[name] or {}
-    lspconfig[name].setup(opts)
+    vim.lsp.config(name, opts)
 end
 
 vim.diagnostic.config({
