@@ -69,7 +69,8 @@ return packer.startup(function(use)
 
     -- linters
     use('jay-babu/mason-null-ls.nvim')
-    use('jose-elias-alvarez/null-ls.nvim')
+    use('nvimtools/none-ls.nvim')
+    use('nvimtools/none-ls-extras.nvim')
 
     -- autocomplete
     use('hrsh7th/nvim-cmp')
