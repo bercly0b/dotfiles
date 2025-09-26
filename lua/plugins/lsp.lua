@@ -1,9 +1,8 @@
 local mason = require('mason')
 local mason_lspconfig = require('mason-lspconfig')
-local cmp_lsp = require('cmp_nvim_lsp')
 local utils = require('utils.filter-definition')
 
-local capabilities = cmp_lsp.default_capabilities()
+local capabilities = require('blink.cmp').get_lsp_capabilities()
 
 local servers = { 'ts_ls', 'lua_ls', 'pyright' }
 local options = {

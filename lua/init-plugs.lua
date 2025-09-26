@@ -62,15 +62,16 @@ require("lazy").setup({
     'nvimtools/none-ls-extras.nvim',
 
     -- autocomplete
-    'hrsh7th/nvim-cmp',
-    'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-buffer',
-    'hrsh7th/cmp-cmdline',
+    {
+        'saghen/blink.cmp',
+        lazy = false,
+        dependencies = 'rafamadriz/friendly-snippets',
+        version = 'v0.*',
+    },
     'onsails/lspkind-nvim',
 
     -- snippets
     'L3MON4D3/LuaSnip',
-    'saadparwaiz1/cmp_luasnip',
 }, {
     ui = {
         border = "rounded",
