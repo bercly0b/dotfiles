@@ -45,7 +45,6 @@ require("lazy").setup({
     { 'folke/noice.nvim', dependencies = { 'MunifTanjim/nui.nvim' } },
 
     -- status line
-    -- 'rebelot/heirline.nvim',
     'nvim-lualine/lualine.nvim',
 
     -- syntax highlight
