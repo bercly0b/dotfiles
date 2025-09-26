@@ -7,13 +7,6 @@
     "snippets": [
       {
         "language": [
-          "markdown",
-          "rmd"
-        ],
-        "path": "./markdown.json"
-      },
-      {
-        "language": [
           "html",
           "jade",
           "pug",

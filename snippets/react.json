@@ -1,24 +1,4 @@
 {
-    "jsx element": {
-        "body": "<${1:elementName}>\n\t$0\n</${1}>",
-        "description": "an element",
-        "prefix": "tag"
-    },
-    "jsx element self closed": {
-        "body": "<${1:elementName} />",
-        "description": "an element self closed",
-        "prefix": "tags"
-    },
-    "jsx elements map": {
-        "body": "{${1:array}.map((item) => <${2:elementName} key={item.id}>\n\t$0\n</${2}>)}",
-        "description": "an element self closed",
-        "prefix": "tagm"
-    },
-    "reactFunctionComponent": {
-        "body": "import React from 'react'\n\nexport const ${TM_FILENAME_BASE} = (props : {}) => {\n\treturn (\n\t\t<div>\n\t\t\t$0\n\t\t</div>\n\t)\n}",
-        "description": "Creates a React functional component without PropTypes",
-        "prefix": "rfc"
-    },
     "useCallback": {
         "body": [
             "const ${1:memoizedCallback} = useCallback(",
@@ -30,13 +10,6 @@
         ],
         "description": "React useCallback() hook",
         "prefix": "usec"
-    },
-    "useContext": {
-        "body": [
-            "const $1 = useContext($2)$0"
-        ],
-        "description": "React useContext() hook",
-        "prefix": "useco"
     },
     "useEffect": {
         "body": [
