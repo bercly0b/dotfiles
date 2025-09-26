@@ -69,13 +69,6 @@ map('n', '<c-[>', '<cmd>lua vim.diagnostic.goto_prev()<CR>', default_opts)
 map('n', '<c-]>', '<cmd>lua vim.diagnostic.goto_next()<CR>', default_opts)
 map('n', 'gs', '<cmd>lua vim.lsp.buf.format({ async = true })<CR>', default_opts)
 
--- luasnip
-map('i', '<Tab>', 'v:lua.tab_complete()', { expr = true })
-map('s', '<Tab>', 'v:lua.tab_complete()', { expr = true })
-map('i', '<S-Tab>', 'v:lua.s_tab_complete()', { expr = true })
-map('s', '<S-Tab>', 'v:lua.s_tab_complete()', { expr = true })
-map('i', '<C-E>', '<Plug>luasnip-next-choice', {})
-map('s', '<C-E>', '<Plug>luasnip-next-choice', {})
 
 map('n', '<c-s>o', '<cmd>so ~/.config/nvim/init.vim<CR>', { silent = false, noremap = true })
 

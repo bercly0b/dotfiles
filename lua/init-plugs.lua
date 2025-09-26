@@ -70,8 +70,6 @@ require("lazy").setup({
     },
     'onsails/lspkind-nvim',
 
-    -- snippets
-    'L3MON4D3/LuaSnip',
 }, {
     ui = {
         border = "rounded",
