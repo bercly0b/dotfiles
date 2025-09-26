@@ -58,38 +58,3 @@ cmp.setup({
         { name = 'buffer' },
     })
 })
-
--- @SEE https://github.com/hrsh7th/nvim-cmp/issues/1397
--- cmp.setup.cmdline('/', {
---     completion = {
---         autocomplete = true
---     },
-
---     view = {
---         entries = { name = 'wildmenu', separator = ' | ' }
---     },
---     sources = {
---         {
---             name = 'buffer',
---             max_item_count = 10,
---             keyword_length = 3,
---         }
---     }
--- })
-
--- cmp.setup.cmdline(':', {
---     completion = {
---         autocomplete = true
---     },
-
---     view = {
---         entries = { name = 'wildmenu', separator = ' | ' }
---     },
---     sources = {
---         {
---             name = 'cmdline',
---             max_item_count = 10,
---             keyword_length = 3,
---         }
---     }
--- })
