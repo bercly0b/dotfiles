@@ -12,7 +12,7 @@
         "prefix": "col"
     },
     "console.log a variable": {
-        "body": "console.log('${0}:', ${0})",
+        "body": "console.log('${1}:', ${1})${0}",
         "prefix": "coln"
     },
     "immediately-invoked function expression": {
