@@ -1,15 +1,15 @@
 require('lazy-bootstrap')
 
 require("lazy").setup({
-    'nathom/filetype.nvim',
-
     'windwp/nvim-autopairs',
     'windwp/nvim-ts-autotag',
 
     'christoomey/vim-tmux-navigator',
 
-    'tyru/open-browser.vim',
-    'tyru/open-browser-github.vim',
+    {
+        'tyru/open-browser-github.vim',
+        dependencies = { 'tyru/open-browser.vim' },
+    },
 
     'kyazdani42/nvim-web-devicons',
 
