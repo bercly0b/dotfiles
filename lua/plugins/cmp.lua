@@ -66,7 +66,7 @@ cmp.setup({
             ['<C-j>'] = { smart_select_next },
             ['<C-k>'] = { 'select_prev' },
             ['<C-[>'] = { 'hide' },
-            ['<CR>'] = { 'accept', 'fallback' },
+            ['<CR>'] = { 'accept_and_enter', 'fallback' },
         },
     },
 })
