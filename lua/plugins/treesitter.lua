@@ -9,22 +9,7 @@ require('nvim-treesitter.configs').setup({
         disable = {},
     },
 
-    ensure_installed = {
-        'tsx',
-        'vim',
-        'lua',
-        'typescript',
-        'javascript',
-        'python',
-        'jsdoc',
-        'json',
-        'yaml',
-        'html',
-        'scss',
-        'css',
-        'bash',
-        'dockerfile',
-    },
+    auto_install = true,
 
     -- windwp/nvim-ts-autotag
     autotag = {

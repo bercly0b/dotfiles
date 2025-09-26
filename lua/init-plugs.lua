@@ -1,85 +1,90 @@
-local packer = require('packer')
+require('lazy-bootstrap')
 
-return packer.startup(function(use)
-    use('wbthomason/packer.nvim')
+require("lazy").setup({
+    'nathom/filetype.nvim',
 
-    -- performance
-    use('lewis6991/impatient.nvim')
-    use('nathom/filetype.nvim')
+    'windwp/nvim-autopairs',
+    'windwp/nvim-ts-autotag',
 
-    use('windwp/nvim-autopairs')
-    use('windwp/nvim-ts-autotag')
+    'christoomey/vim-tmux-navigator',
 
-    use('christoomey/vim-tmux-navigator')
+    'tyru/open-browser.vim',
+    'tyru/open-browser-github.vim',
 
-    use({ 'tyru/open-browser.vim' }) --
-    use({ 'tyru/open-browser-github.vim' }) --
-
-    use('kyazdani42/nvim-web-devicons')
+    'kyazdani42/nvim-web-devicons',
 
     -- navigation
-    use('jlanzarotta/bufexplorer') --
-    use('kyazdani42/nvim-tree.lua')
+    'jlanzarotta/bufexplorer',
+    'kyazdani42/nvim-tree.lua',
 
     -- gS gJ
-    use('AndrewRadev/splitjoin.vim')
+    'AndrewRadev/splitjoin.vim',
 
     -- telescope
-    use('nvim-lua/popup.nvim')
-    use('nvim-lua/plenary.nvim')
-    use('nvim-telescope/telescope.nvim')
-    use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
+    'nvim-lua/popup.nvim',
+    'nvim-lua/plenary.nvim',
+    'nvim-telescope/telescope.nvim',
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 
     -- theme
-    -- use('catppuccin/nvim')
-    use('navarasu/onedark.nvim')
+    -- 'catppuccin/nvim',
+    'navarasu/onedark.nvim',
 
-    use('tpope/vim-commentary') --
-    use('tpope/vim-sensible') --
-    use('wellle/targets.vim') --
+    'tpope/vim-commentary',
+    'tpope/vim-sensible',
+    'wellle/targets.vim',
 
     -- change/edit brackets
-    use('tpope/vim-surround') --
+    'tpope/vim-surround',
 
     -- git
-    use('lewis6991/gitsigns.nvim')
-    use('tpope/vim-fugitive') --
+    'lewis6991/gitsigns.nvim',
+    'tpope/vim-fugitive',
 
     -- command line popup
-    use({ 'folke/noice.nvim', requires = { 'MunifTanjim/nui.nvim' } })
+    { 'folke/noice.nvim', dependencies = { 'MunifTanjim/nui.nvim' } },
 
     -- status line
-    -- use('rebelot/heirline.nvim')
-    use('nvim-lualine/lualine.nvim')
+    -- 'rebelot/heirline.nvim',
+    'nvim-lualine/lualine.nvim',
 
-    -- syntax highligt
-    use({ 'wavded/vim-stylus', ft = { 'css', 'scss', 'less', 'sass' } })
-    use({
-        'nvim-treesitter/nvim-treesitter',
-        run = function()
-            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-            ts_update()
-        end,
-    })
+    -- syntax highlight
+    { 'wavded/vim-stylus', ft = { 'css', 'scss', 'less', 'sass' } },
+    'nvim-treesitter/nvim-treesitter',
 
     -- lsp
-    use('williamboman/mason.nvim')
-    use('williamboman/mason-lspconfig.nvim')
-    use('neovim/nvim-lspconfig')
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+    'neovim/nvim-lspconfig',
 
     -- linters
-    use('jay-babu/mason-null-ls.nvim')
-    use('nvimtools/none-ls.nvim')
-    use('nvimtools/none-ls-extras.nvim')
+    'jay-babu/mason-null-ls.nvim',
+    'nvimtools/none-ls.nvim',
+    'nvimtools/none-ls-extras.nvim',
 
     -- autocomplete
-    use('hrsh7th/nvim-cmp')
-    use('hrsh7th/cmp-nvim-lsp')
-    use('hrsh7th/cmp-buffer')
-    use('hrsh7th/cmp-cmdline')
-    use('onsails/lspkind-nvim') -- cmp sources icons
+    'hrsh7th/nvim-cmp',
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-cmdline',
+    'onsails/lspkind-nvim',
 
     -- snippets
-    use('L3MON4D3/LuaSnip')
-    use('saadparwaiz1/cmp_luasnip')
-end)
+    'L3MON4D3/LuaSnip',
+    'saadparwaiz1/cmp_luasnip',
+}, {
+    ui = {
+        border = "rounded",
+    },
+    performance = {
+        rtp = {
+            disabled_plugins = {
+                "gzip",
+                "tarPlugin",
+                "tohtml",
+                "tutor",
+                "zipPlugin",
+            },
+        },
+    },
+})

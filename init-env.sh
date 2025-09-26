@@ -23,11 +23,6 @@ curl -sL https://github.com/neovim/neovim/releases/download/v0.11.4/nvim-linux-x
 tar -xf nvim-linux64.tar.gz
 export PATH=/home/hh/nvim-linux64/bin:$PATH
 
-# packer
-_print "Installing Packer"
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
-    ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-
 # tmux tmp
 _print "Installing tmux plugin manager"
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
