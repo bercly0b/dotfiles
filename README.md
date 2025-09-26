@@ -22,7 +22,7 @@ First install dependencies
 
 ### dependencies
 - [neovim](https://neovim.io/)
-- [packer.nvim](https://github.com/wbthomason/packer.nvim)
+- [lazy.nvim](https://lazy.folke.io/)
 - [tmux](https://github.com/tmux/tmux)
 - [tpm](https://github.com/tmux-plugins/tpm)
 - [zsh](https://ohmyz.sh/)
