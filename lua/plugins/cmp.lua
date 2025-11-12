@@ -8,7 +8,13 @@ cmp.setup({
         preset = 'default',
         ['<C-j>'] = { 'show', 'select_next', 'fallback' },
         ['<C-k>'] = { 'select_prev', 'fallback' },
-        ['<C-[>'] = { 'hide', 'fallback' },
+        ['<C-[>'] = {
+            function(cmp_)
+                cmp_.hide()
+                return false
+            end,
+            'fallback',
+        },
         ['<CR>'] = { 'accept', 'fallback' },
     },
 
