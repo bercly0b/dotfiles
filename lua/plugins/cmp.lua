@@ -64,7 +64,13 @@ cmp.setup({
         keymap = {
             ['<C-j>'] = { 'show', 'select_next' },
             ['<C-k>'] = { 'select_prev' },
-            ['<C-[>'] = { 'hide' },
+            ['<C-[>'] = {
+                function(cmp_)
+                    cmp_.hide()
+                    return false
+                end,
+                'fallback',
+            },
             ['<CR>'] = { 'accept_and_enter', 'fallback' },
         },
     },
