@@ -42,7 +42,7 @@ _print "Installing npm deps"
 sudo npm install -g typescript typescript-language-server eslint_d
 
 # set vim as git editor
-git config --global core.editor "nvim"
+git config --global core.editor "vi"
 
 mkdir ~/self
 mkdir -p ~/.config/nvim
