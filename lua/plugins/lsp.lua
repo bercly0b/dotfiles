@@ -45,17 +45,31 @@ for _, name in pairs(servers) do
     vim.lsp.config(name, opts)
 end
 
+local diagnostic_signs = {
+    [vim.diagnostic.severity.ERROR] = '',
+    [vim.diagnostic.severity.WARN] = '',
+    [vim.diagnostic.severity.INFO] = '',
+    [vim.diagnostic.severity.HINT] = '',
+}
+
 vim.diagnostic.config({
     virtual_text = false,
-    signs = true,
     underline = true,
     update_in_insert = false,
     severity_sort = false,
+    signs = {
+        text = diagnostic_signs,
+        texthl = {
+            [vim.diagnostic.severity.ERROR] = 'DiagnosticSignError',
+            [vim.diagnostic.severity.WARN] = 'DiagnosticSignWarn',
+            [vim.diagnostic.severity.INFO] = 'DiagnosticSignInfo',
+            [vim.diagnostic.severity.HINT] = 'DiagnosticSignHint',
+        },
+        numhl = {
+            [vim.diagnostic.severity.ERROR] = 'DiagnosticSignError',
+            [vim.diagnostic.severity.WARN] = 'DiagnosticSignWarn',
+            [vim.diagnostic.severity.INFO] = 'DiagnosticSignInfo',
+            [vim.diagnostic.severity.HINT] = 'DiagnosticSignHint',
+        },
+    },
 })
-
-vim.cmd([[
-    sign define DiagnosticSignError text= linehl= texthl=DiagnosticSignError numhl=
-    sign define DiagnosticSignWarn text= linehl= texthl=DiagnosticSignWarn numhl=
-    sign define DiagnosticSignInfo text= linehl= texthl=DiagnosticSignInfo numhl=
-    sign define DiagnosticSignHint text= linehl= texthl=DiagnosticSignHint numhl=
-]])
