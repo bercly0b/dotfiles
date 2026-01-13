@@ -15,6 +15,9 @@ source $ZSH/oh-my-zsh.sh
 bindkey '^[b' backward-word
 bindkey '^[f' forward-word
 
+# ESC+k -> clear screen
+bindkey '^[k' clear-screen
+
 alias gs='git status --short '
 alias ga='git add '
 alias gb='git branch --sort=-committerdate '
@@ -65,3 +68,4 @@ export PATH="/home/$(whoami)/.local/bin:$PATH"
 export LDFLAGS="-L/opt/homebrew/opt/sqlite/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/sqlite/include"
 export PKG_CONFIG_PATH="/opt/homebrew/opt/sqlite/lib/pkgconfig"
+export GHOSTTY_CONFIG_FILE="$HOME/self/dotfiles/ghostty/config"

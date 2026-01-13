@@ -16,6 +16,15 @@ git config --global user.name "USERNAME"
 git config --global user.email "MY_NAME@example.com"
 ```
 
+
+## Ghosty config
+
+```bash
+mkdir -p ~/.config/ghostty
+ln -sf ~/self/dotfiles/ghostty/config ~/.config/ghostty/config
+```
+
+
 ## Manual installation
 
 First install dependencies
