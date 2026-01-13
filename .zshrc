@@ -45,7 +45,13 @@ export NVM_DIR="$HOME/.nvm"
 # NVM lazy loading
 nvm_lazy_load() {
   unfunction nvm node npm npx >/dev/null 2>&1
-  [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+  if [ -s "$NVM_DIR/nvm.sh" ]; then
+    source "$NVM_DIR/nvm.sh"
+  elif [ -s "/opt/homebrew/opt/nvm/nvm.sh" ]; then
+    source "/opt/homebrew/opt/nvm/nvm.sh"
+  elif [ -s "/usr/local/opt/nvm/nvm.sh" ]; then
+    source "/usr/local/opt/nvm/nvm.sh"
+  fi
   command "$@"
 }
 
