@@ -49,7 +49,11 @@ require("lazy").setup({
 
     -- syntax highlight
     { 'wavded/vim-stylus', ft = { 'css', 'scss', 'less', 'sass' } },
-    'nvim-treesitter/nvim-treesitter',
+    {
+        'nvim-treesitter/nvim-treesitter',
+        branch = 'master',
+        build = ':TSUpdate',
+    },
 
     -- lsp
     'williamboman/mason.nvim',
