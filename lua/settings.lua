@@ -39,7 +39,15 @@ set.signcolumn = 'yes'
 
 set.termguicolors = true
 
-vim.g.node_path = '/usr/bin/node'
+local nvm_bins = vim.fn.glob(vim.env.HOME .. '/.nvm/versions/node/*/bin', 0, 1)
+if #nvm_bins > 0 then
+    table.sort(nvm_bins)
+    local nvm_bin = nvm_bins[#nvm_bins]
+    vim.env.PATH = nvm_bin .. ':' .. vim.env.PATH
+    vim.g.node_path = nvm_bin .. '/node'
+else
+    vim.g.node_path = '/usr/bin/node'
+end
 
 -- Indent guides
 vim.g.indent_guides_enable_on_vim_startup = 0
