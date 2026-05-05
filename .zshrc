@@ -24,6 +24,7 @@ alias gb='git branch --sort=-committerdate '
 alias gc='git commit'
 alias gd='git diff'
 alias go='git checkout '
+alias gw='git worktree '
 
 alias got='git '
 alias get='git '
@@ -40,25 +41,8 @@ DISABLE_AUTO_UPDATE=true
 autoload -Uz compinit
 compinit -i
 
-export NVM_DIR="$HOME/.nvm"
-
-# NVM lazy loading
-nvm_lazy_load() {
-  unfunction nvm node npm npx >/dev/null 2>&1
-  if [ -s "$NVM_DIR/nvm.sh" ]; then
-    source "$NVM_DIR/nvm.sh"
-  elif [ -s "/opt/homebrew/opt/nvm/nvm.sh" ]; then
-    source "/opt/homebrew/opt/nvm/nvm.sh"
-  elif [ -s "/usr/local/opt/nvm/nvm.sh" ]; then
-    source "/usr/local/opt/nvm/nvm.sh"
-  fi
-  command "$@"
-}
-
-function nvm()  { nvm_lazy_load nvm "$@" }
-function node() { nvm_lazy_load node "$@" }
-function npm()  { nvm_lazy_load npm "$@" }
-function npx()  { nvm_lazy_load npx "$@" }
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
 
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --ignore-file /home/$(whoami)/self/dotfiles/.rdignore'
