@@ -4,7 +4,7 @@ local utils = require('utils.filter-definition')
 
 local capabilities = require('blink.cmp').get_lsp_capabilities()
 
-local servers = { 'ts_ls', 'lua_ls', 'pyright', 'solidity_ls_nomicfoundation' }
+local servers = { 'ts_ls', 'lua_ls', 'pyright', 'solidity_ls_nomicfoundation', 'rust_analyzer' }
 local options = {
     ts_ls = {
         on_attach = function(client)
@@ -38,6 +38,17 @@ local options = {
 
     solidity_ls_nomicfoundation = {
         capabilities = capabilities,
+    },
+
+    rust_analyzer = {
+        capabilities = capabilities,
+        settings = {
+            ['rust-analyzer'] = {
+                check = {
+                    command = 'clippy',
+                },
+            },
+        },
     },
 }
 
