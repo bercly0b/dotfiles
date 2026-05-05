@@ -51,7 +51,8 @@ require("lazy").setup({
     { 'wavded/vim-stylus', ft = { 'css', 'scss', 'less', 'sass' } },
     {
         'nvim-treesitter/nvim-treesitter',
-        branch = 'master',
+        branch = 'main',
+        lazy = false,
         build = ':TSUpdate',
     },
 
