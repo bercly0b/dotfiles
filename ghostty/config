@@ -7,7 +7,8 @@ keybind = cmd+k=text:\u{1b}k
 cursor-style = block
 shell-integration-features = no-cursor
 
-font-family = Iosevka NFM Medium
+font-family = Fira Code
+font-style = Medium
 font-size = 18
 
 # Light/dark switch for the whole setup: tmux, zsh and fzf use this palette,
