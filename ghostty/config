@@ -11,6 +11,6 @@ font-family = Fira Code
 font-style = Medium
 font-size = 18
 
-# Light/dark switch for the whole setup: tmux, zsh and fzf use this palette,
-# nvim parses this line (lua/theme.lua)
-theme = Flexoki Light
+# Theme switch for the whole setup: Catppuccin Latte (light) or Mocha (dark).
+# nvim, tmux and fzf read this line to pick the same flavor.
+theme = Catppuccin Latte

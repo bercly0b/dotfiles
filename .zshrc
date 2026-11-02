@@ -46,9 +46,23 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --ignore-file /home/$(whoami)/self/dotfiles/.rdignore'
-# Palette colours follow Ghostty light/dark. Plain --color=16 draws the current
-# line light-on-light in Flexoki Light, so it gets no bar, just bold.
-export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --no-mouse --exact --color=16,bg+:-1,gutter:8,fg+:-1:bold,hl+:2:bold'
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --no-mouse --exact'
+# catppuccin/fzf colors, flavor follows the theme line in ghostty/config
+if grep -q '^theme = Catppuccin Mocha' ~/self/dotfiles/ghostty/config 2>/dev/null; then
+    FZF_DEFAULT_OPTS+=" \
+--color=bg+:#313244,bg:#1E1E2E,spinner:#F5E0DC,hl:#F38BA8 \
+--color=fg:#CDD6F4,header:#F38BA8,info:#CBA6F7,pointer:#F5E0DC \
+--color=marker:#B4BEFE,fg+:#CDD6F4,prompt:#CBA6F7,hl+:#F38BA8 \
+--color=selected-bg:#45475A \
+--color=border:#6C7086,label:#CDD6F4"
+else
+    FZF_DEFAULT_OPTS+=" \
+--color=bg+:#CCD0DA,bg:#EFF1F5,spinner:#DC8A78,hl:#D20F39 \
+--color=fg:#4C4F69,header:#D20F39,info:#8839EF,pointer:#DC8A78 \
+--color=marker:#7287FD,fg+:#4C4F69,prompt:#8839EF,hl+:#D20F39 \
+--color=selected-bg:#BCC0CC \
+--color=border:#9CA0B0,label:#4C4F69"
+fi
 export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always {} | head -200'"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
