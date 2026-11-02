@@ -27,8 +27,7 @@ require("lazy").setup({
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 
     -- theme
-    -- 'catppuccin/nvim',
-    'navarasu/onedark.nvim',
+    { 'kepano/flexoki-neovim', name = 'flexoki' },
 
     'tpope/vim-commentary',
     'tpope/vim-sensible',

@@ -46,7 +46,9 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --ignore-file /home/$(whoami)/self/dotfiles/.rdignore'
-export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --no-mouse --exact'
+# Palette colours follow Ghostty light/dark. Plain --color=16 draws the current
+# line light-on-light in Flexoki Light, so it gets no bar, just bold.
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --no-mouse --exact --color=16,bg+:-1,gutter:8,fg+:-1:bold,hl+:2:bold'
 export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always {} | head -200'"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
