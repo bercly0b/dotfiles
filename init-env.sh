@@ -14,7 +14,7 @@ _print "Updating packages information"
 sudo apt update
 
 _print "Installing dependencies"
-sudo apt install -y tmux fd-find ripgrep htop libffi-dev libcurl4-gnutls-dev librtmp-dev
+sudo apt install -y tmux fd-find ripgrep htop sysstat libffi-dev libcurl4-gnutls-dev librtmp-dev
 sudo ln -s $(which fdfind) /bin/fd
 
 # nvim
