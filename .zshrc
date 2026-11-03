@@ -45,7 +45,7 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
 
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --ignore-file /home/$(whoami)/self/dotfiles/.rdignore'
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --ignore-file $HOME/self/dotfiles/.rgignore'
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --no-mouse --exact'
 # catppuccin/fzf colors, flavor follows the theme line in ghostty/config
 if grep -q '^theme = Catppuccin Mocha' ~/self/dotfiles/ghostty/config 2>/dev/null; then
