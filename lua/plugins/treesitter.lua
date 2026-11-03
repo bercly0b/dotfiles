@@ -14,6 +14,9 @@ vim.api.nvim_create_autocmd('FileType', {
             return
         end
 
+        -- plugin windows (noice, blink-cmp-menu, ...) have filetypes with no parser
+        if not vim.list_contains(nts.get_available(), lang) then return end
+
         nts.install({ lang }):await(function(err)
             if err then return end
             vim.schedule(function()
