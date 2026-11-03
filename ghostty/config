@@ -9,7 +9,8 @@ shell-integration-features = no-cursor
 
 font-family = Fira Code
 font-style = Medium
-font-size = 18
+font-size = 16
+font-feature = -calt, -liga, -dlig
 
 # Theme switch for the whole setup: Catppuccin Latte (light) or Mocha (dark).
 # nvim, tmux and fzf read this line to pick the same flavor.
