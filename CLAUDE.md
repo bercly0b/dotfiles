@@ -14,7 +14,7 @@ When changing anything:
 - Think about where it runs. Mac-only features (battery, `pbcopy`, `/opt/homebrew`, Ghostty) need a runtime check and must do nothing on Linux, and the reverse.
 - Checks: zsh `[[ $OSTYPE == darwin* ]]`, tmux `if-shell 'uname | grep -q Darwin'`, nvim `vim.fn.has('mac') == 1`.
 - Don't use tmux/nvim options newer than what the servers have without a guard.
-- `open` is the reference example of picking behavior per environment.
+- The `.tmux.conf` status line (battery, session icon) is the reference example of picking behavior per environment.
 
 ## Colors
 

@@ -33,8 +33,6 @@ alias top='htop'
 alias vim='nvim'
 alias tmux='tmux -2'
 
-alias open='~/self/dotfiles/open'
-
 ZSH_TMUX_FIXTERM=true
 DISABLE_AUTO_UPDATE=true
 
