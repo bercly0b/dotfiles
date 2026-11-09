@@ -49,6 +49,8 @@ git clone https://github.com/bercly0b/dotfiles.git ~/self/dotfiles
 
 ln -s ~/self/dotfiles/lua ~/.config/nvim/lua
 ln -s ~/self/dotfiles/snippets ~/.config/nvim/snippets
+mkdir -p ~/.config/extrakto
+ln -s ~/self/dotfiles/extrakto/extrakto.conf ~/.config/extrakto/extrakto.conf
 
 # next commands will overwrite your zsh, neovim and tmux config files in home dir. be careful
 echo "require('init')" > ~/.config/nvim/init.lua

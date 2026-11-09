@@ -14,7 +14,7 @@ _print "Updating packages information"
 sudo apt update
 
 _print "Installing dependencies"
-sudo apt install -y tmux fd-find ripgrep htop sysstat libffi-dev libcurl4-gnutls-dev librtmp-dev
+sudo apt install -y tmux fd-find ripgrep htop sysstat python3 libffi-dev libcurl4-gnutls-dev librtmp-dev
 sudo ln -s $(which fdfind) /bin/fd
 
 # nvim
@@ -46,12 +46,14 @@ git config --global core.editor "vi"
 
 mkdir ~/self
 mkdir -p ~/.config/nvim
+mkdir -p ~/.config/extrakto
 
 _print "Applying configs"
 git clone https://github.com/bercly0b/dotfiles.git ~/self/dotfiles
 
 ln -s ~/self/dotfiles/lua ~/.config/nvim/lua
 ln -s ~/self/dotfiles/snippets ~/.config/nvim/snippets
+ln -s ~/self/dotfiles/extrakto/extrakto.conf ~/.config/extrakto/extrakto.conf
 
 echo "require('init')" > ~/.config/nvim/init.lua
 echo "source-file ~/self/dotfiles/.tmux.conf" > ~/.tmux.conf
