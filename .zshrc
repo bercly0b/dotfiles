@@ -61,7 +61,6 @@ else
 --color=selected-bg:#BCC0CC \
 --color=border:#9CA0B0,label:#4C4F69"
 fi
-export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always {} | head -200'"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
