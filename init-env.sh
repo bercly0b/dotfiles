@@ -19,9 +19,9 @@ sudo ln -s $(which fdfind) /bin/fd
 
 # nvim
 _print "Installing Neovim"
-curl -sL https://github.com/neovim/neovim/releases/download/v0.11.4/nvim-linux-x86_64.tar.gz -o nvim-linux64.tar.gz
-tar -xf nvim-linux64.tar.gz
-export PATH=/home/hh/nvim-linux64/bin:$PATH
+mkdir -p ~/.local
+curl -sL https://github.com/neovim/neovim/releases/download/v0.11.4/nvim-linux-x86_64.tar.gz \
+    | tar -xz --strip-components=1 -C ~/.local
 
 # tmux tmp
 _print "Installing tmux plugin manager"
